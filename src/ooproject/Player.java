@@ -42,6 +42,7 @@ public class Player {
 		offence = off;
 		defence = def;
 		position = pos;
+		
 		cardCount = cc;
 		this.injured = injured;
 	}
