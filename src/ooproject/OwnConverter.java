@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+//VERWIJDER NOOIT GROENE TEKST EN/OF ONGEIMPLEMENTEERDE CODE
 
 public class OwnConverter implements ActionListener, ListSelectionListener{
 	private JFrame frame;
@@ -111,6 +112,100 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 
 		basicframe.setContentPane(contentpane2);
 	}
+	
+	public void BetweenRounds(JFrame basicframe) {
+		JButton button5 = new JButton();
+		button5.setOpaque(true);
+		button5.setPreferredSize(new Dimension(200, 100));
+		button5.setBorder(BorderFactory.createRaisedBevelBorder());
+		button5.setText("NEXT MATCH");
+		
+		button5.setActionCommand("BetweenRoundsNextMatch");
+		button5.addActionListener(this);
+		
+		JButton button6 = new JButton();
+		button6.setOpaque(true);
+		button6.setPreferredSize(new Dimension(200, 100));
+		button6.setBorder(BorderFactory.createRaisedBevelBorder());
+		button6.setText("TRANSFERS");
+		
+		button6.setActionCommand("BetweenRoundsTransfers");
+		button6.addActionListener(this);
+		
+		JButton button7 = new JButton();
+		button7.setOpaque(true);
+		button7.setPreferredSize(new Dimension(200, 100));
+		button7.setBorder(BorderFactory.createRaisedBevelBorder());
+		button7.setText("TEAM MANAGEMENT");
+		
+		button7.setActionCommand("BetweenRoundsTeamManagement");
+		button7.addActionListener(this);
+		
+		JButton button8 = new JButton();
+		button8.setOpaque(true);
+		button8.setPreferredSize(new Dimension(200, 100));
+		button8.setBorder(BorderFactory.createRaisedBevelBorder());
+		button8.setText("TOURNEY OVERVIEW");
+		
+		button8.setActionCommand("BetweenRoundsToureyOverview");
+		button8.addActionListener(this);
+		
+		JButton button9 = new JButton();
+		button9.setOpaque(true);
+		button9.setPreferredSize(new Dimension(200, 100));
+		button9.setBorder(BorderFactory.createRaisedBevelBorder());
+		button9.setText("SAVE");
+		
+		button9.setActionCommand("BetweenRoundsSave");
+		button9.addActionListener(this);
+		
+		JButton button10 = new JButton();
+		button10.setOpaque(true);
+		button10.setPreferredSize(new Dimension(200, 100));
+		button10.setBorder(BorderFactory.createRaisedBevelBorder());
+		button10.setText("HOME SCREEN");
+		
+		button10.setActionCommand("BetweenRoundsHomeScreen");
+		button10.addActionListener(this);
+		
+		JTextField textfield2 = new JTextField();
+		textfield2.setOpaque(true);
+		textfield2.setPreferredSize(new Dimension(150, 20));
+		//TEMPORARY TEXT
+		String string1 = "Budget: 1000000";
+		textfield2.setText(string1);
+		textfield2.setEditable(false);
+		//NO SET ACTION COMMAND OR LISTENER FOR UNEDITIBLE TEXT FIELD?
+		
+		JTextField textfield3 = new JTextField();
+		textfield3.setOpaque(true);
+		textfield3.setPreferredSize(new Dimension(150, 20));
+		//TEMPORARY TEXT
+		String string2 = "Last result: some result";
+		textfield3.setText(string2);
+		textfield3.setEditable(false);
+		
+		JTextField textfield4 = new JTextField();
+		textfield4.setOpaque(true);
+		textfield4.setPreferredSize(new Dimension(150, 20));
+		//TEMPORARY TEXT
+		String string3 = "Next opponent: someone";
+		textfield4.setText(string3);
+		textfield4.setEditable(false);
+		
+		JPanel contentpane3 = new JPanel(new FlowLayout());
+		contentpane3.add(button5);
+		contentpane3.add(button6);
+		contentpane3.add(button7);
+		contentpane3.add(button8);
+		contentpane3.add(button9);
+		contentpane3.add(button10);
+		contentpane3.add(textfield2);
+		contentpane3.add(textfield3);
+		contentpane3.add(textfield4);
+		
+		basicframe.setContentPane(contentpane3);
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -122,13 +217,56 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 		}
 		else if ("continue".equals(e.getActionCommand())) {
 			//Press Continue on HomeScreen
+			//Load safe file:
+			this.BetweenRounds(this.frame);
+			this.frame.pack();
+			this.frame.setVisible(true);
 		}
 		else if ("exit".equals(e.getActionCommand())) {
 			//Press Exit on HomeScreen
+			//Save state to safe file
 			this.frame.dispatchEvent(new WindowEvent(this.frame, WindowEvent.WINDOW_CLOSING));
 		}
 		else if ("NewGameAdvance".equals(e.getActionCommand())) {
-			//Press Exit on NewGame
+			//Press Advance on NewGame
+			//Copy resource file to save file + add team + add save file name
+			this.BetweenRounds(this.frame);
+			this.frame.pack();
+			this.frame.setVisible(true);
+		}
+		else if ("BetweenRoundsNextMatch".equals(e.getActionCommand())) {
+			//Press Next Match on BetweenRounds
+			//this.NextMatch(this.frame);
+			//this.frame.pack();
+			//this.frame.setVisible(true);
+		}
+		else if ("BetweenRoundsTransfers".equals(e.getActionCommand())) {
+			//Press Transfers on BetweenRounds
+			//this.Transfers(this.frame);
+			//this.frame.pack();
+			//this.frame.setVisible(true);
+		}
+		else if ("BetweenRoundsTeamManagement".equals(e.getActionCommand())) {
+			//Press Team Management on BetweenRounds
+			//this.TeamManagement(this.frame);
+			//this.frame.pack();
+			//this.frame.setVisible(true);
+		}
+		else if ("BetweenRoundsToureyOverview".equals(e.getActionCommand())) {
+			//Press Tourney Overview on BetweenRounds
+			//this.TourneyOverview(this.frame);
+			//this.frame.pack();
+			//this.frame.setVisible(true);
+		}
+		else if ("BetweenRoundsSave".equals(e.getActionCommand())) {
+			//Press Save on BetweenRounds
+			//Save state to save file
+		}
+		else if ("BetweenRoundsHomeScreen".equals(e.getActionCommand())) {
+			//Press Home Screen on BetweenRounds
+			this.HomeScreen(this.frame);
+			this.frame.pack();
+			this.frame.setVisible(true);
 		}
 		//else if (this.list1.getSelectedIndex() != -1 && this.textfield1.getText().equals("") != true && "NewGameName".equals(e.getActionCommand())) {
 		//	System.out.println("Test");
