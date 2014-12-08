@@ -7,7 +7,6 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-//VERWIJDER NOOIT GROENE TEKST EN/OF ONGEIMPLEMENTEERDE CODE
 
 public class OwnConverter implements ActionListener, ListSelectionListener{
 	private JFrame frame;
@@ -21,12 +20,7 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 		basicframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame = basicframe;
 	}
-	
-	public static void main(String[] args) {
-		OwnConverter basicframe = new OwnConverter("Soccer Manager");
-		basicframe.createAndShowGUI();
-    }
-	
+		
 	public void createAndShowGUI() {
 		this.HomeScreen(this.frame);
 		this.frame.pack();
@@ -36,7 +30,7 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 	public void HomeScreen(JFrame basicframe) {
 		JButton button1 = new JButton();
 		button1.setOpaque(true);
-		button1.setPreferredSize(new Dimension(400, 100));;
+		button1.setPreferredSize(new Dimension(120, 40));;
 		button1.setBorder(BorderFactory.createRaisedBevelBorder());
 		button1.setText("NEW GAME");
 		
@@ -45,16 +39,25 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 		
 		JButton button2 = new JButton();
 		button2.setOpaque(true);
-		button2.setPreferredSize(new Dimension(400, 100));
+		button2.setPreferredSize(new Dimension(120, 40));
 		button2.setBorder(BorderFactory.createRaisedBevelBorder());
 		button2.setText("CONTINUE");
 		
 		button2.setActionCommand("continue");
 		button2.addActionListener(this);
 		
+		JButton button6 = new JButton();
+		button6.setOpaque(true);
+		button6.setPreferredSize(new Dimension(120, 40));
+		button6.setBorder(BorderFactory.createRaisedBevelBorder());
+		button6.setText("MATCH");
+		
+		button6.setActionCommand("matchScreen");
+		button6.addActionListener(this);
+		
 		JButton button3 = new JButton();
 		button3.setOpaque(true);
-		button3.setPreferredSize(new Dimension(400, 100));
+		button3.setPreferredSize(new Dimension(120, 40));
 		button3.setBorder(BorderFactory.createRaisedBevelBorder());
 		button3.setText("EXIT");
 		
@@ -62,11 +65,21 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 		button3.addActionListener(this);
 		
 		JPanel contentpane1 = new JPanel(new FlowLayout());
+		contentpane1.add(button6, BorderLayout.SOUTH);
 		contentpane1.add(button1, BorderLayout.NORTH);
 		contentpane1.add(button2, BorderLayout.CENTER);
-		contentpane1.add(button3, BorderLayout.SOUTH);
+		contentpane1.add(button3, BorderLayout.CENTER);
 		
 		basicframe.setContentPane(contentpane1);
+		
+		Container c = frame.getContentPane();
+        c.setBackground(Color.WHITE);
+        // adjust to need.
+        Dimension d = new Dimension(640,480);
+        c.setPreferredSize(d);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
 	}
 	
 	public void NewGame(JFrame basicframe) {
@@ -112,101 +125,71 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 
 		basicframe.setContentPane(contentpane2);
 	}
-	
-	public void BetweenRounds(JFrame basicframe) {
-		JButton button5 = new JButton();
-		button5.setOpaque(true);
-		button5.setPreferredSize(new Dimension(200, 100));
-		button5.setBorder(BorderFactory.createRaisedBevelBorder());
-		button5.setText("NEXT MATCH");
-		
-		button5.setActionCommand("BetweenRoundsNextMatch");
-		button5.addActionListener(this);
-		
-		JButton button6 = new JButton();
-		button6.setOpaque(true);
-		button6.setPreferredSize(new Dimension(200, 100));
-		button6.setBorder(BorderFactory.createRaisedBevelBorder());
-		button6.setText("TRANSFERS");
-		
-		button6.setActionCommand("BetweenRoundsTransfers");
-		button6.addActionListener(this);
-		
-		JButton button7 = new JButton();
-		button7.setOpaque(true);
-		button7.setPreferredSize(new Dimension(200, 100));
-		button7.setBorder(BorderFactory.createRaisedBevelBorder());
-		button7.setText("TEAM MANAGEMENT");
-		
-		button7.setActionCommand("BetweenRoundsTeamManagement");
-		button7.addActionListener(this);
-		
-		JButton button8 = new JButton();
-		button8.setOpaque(true);
-		button8.setPreferredSize(new Dimension(200, 100));
-		button8.setBorder(BorderFactory.createRaisedBevelBorder());
-		button8.setText("TOURNEY OVERVIEW");
-		
-		button8.setActionCommand("BetweenRoundsToureyOverview");
-		button8.addActionListener(this);
-		
-		JButton button9 = new JButton();
-		button9.setOpaque(true);
-		button9.setPreferredSize(new Dimension(200, 100));
-		button9.setBorder(BorderFactory.createRaisedBevelBorder());
-		button9.setText("SAVE");
-		
-		button9.setActionCommand("BetweenRoundsSave");
-		button9.addActionListener(this);
-		
-		JButton button10 = new JButton();
-		button10.setOpaque(true);
-		button10.setPreferredSize(new Dimension(200, 100));
-		button10.setBorder(BorderFactory.createRaisedBevelBorder());
-		button10.setText("HOME SCREEN");
-		
-		button10.setActionCommand("BetweenRoundsHomeScreen");
-		button10.addActionListener(this);
-		
-		JTextField textfield2 = new JTextField();
-		textfield2.setOpaque(true);
-		textfield2.setPreferredSize(new Dimension(150, 20));
-		//TEMPORARY TEXT
-		String string1 = "Budget: 1000000";
-		textfield2.setText(string1);
-		textfield2.setEditable(false);
-		//NO SET ACTION COMMAND OR LISTENER FOR UNEDITIBLE TEXT FIELD?
-		
-		JTextField textfield3 = new JTextField();
-		textfield3.setOpaque(true);
-		textfield3.setPreferredSize(new Dimension(150, 20));
-		//TEMPORARY TEXT
-		String string2 = "Last result: some result";
-		textfield3.setText(string2);
-		textfield3.setEditable(false);
-		
-		JTextField textfield4 = new JTextField();
-		textfield4.setOpaque(true);
-		textfield4.setPreferredSize(new Dimension(150, 20));
-		//TEMPORARY TEXT
-		String string3 = "Next opponent: someone";
-		textfield4.setText(string3);
-		textfield4.setEditable(false);
+
+	public void matchScreen(JFrame basicframe) {
+		//League league = League.readResources("resource.xml");
+		Team team1 = new Team("Arse-anal", "Highbury", 10);//league.getTeams().get(0);
+		Team team2 = new Team("Manboober united", "Old Trafford", 11);//league.getTeams().get(1);
+		JLabel text = new JLabel("");
+		JLabel updateText = new JLabel("");
+		JProgressBar pbar = new JProgressBar();
+	    pbar.setMinimum(0);
+	    pbar.setMaximum(90);
+	    JButton summary = new JButton();
+	    summary.setOpaque(true);
+		summary.setPreferredSize(new Dimension(96, 40));
+		summary.setText("SUMMARY");
+		summary.setActionCommand("goToSummary");
+		summary.addActionListener(this);
+		summary.setEnabled(false);
+		summary.setVisible(false);
+
 		
 		JPanel contentpane3 = new JPanel(new FlowLayout());
-		contentpane3.add(button5);
-		contentpane3.add(button6);
-		contentpane3.add(button7);
-		contentpane3.add(button8);
-		contentpane3.add(button9);
-		contentpane3.add(button10);
-		contentpane3.add(textfield2);
-		contentpane3.add(textfield3);
-		contentpane3.add(textfield4);
+		contentpane3.add(text);
+		contentpane3.add(pbar);
+		contentpane3.add(updateText);
+		contentpane3.add(summary);
 		
-		basicframe.setContentPane(contentpane3);
-	}
 
+		basicframe.setContentPane(contentpane3);
+
+		Container c = frame.getContentPane();
+        c.setBackground(Color.WHITE);
+        // adjust to need.
+        Dimension d = new Dimension(640,480);
+        c.setPreferredSize(d);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+        
+        matchLogic match = new matchLogic(90, team1, team2, text, updateText, pbar, summary);
+      	match.start();
+	}
+	
+	public void summaryScreen(JFrame basicframe){
+		JLabel summText = new JLabel("<html>this guy scored<br>this guy too<br>teamm 1 won<br>team 2 didnt</html>");
+		JButton cont = new JButton();
+		cont.setPreferredSize(new Dimension(96, 40));
+		cont.setText("CONTINUE");
+		cont.setActionCommand("cont");
+		cont.addActionListener(this);
+
+		JPanel contentpane4 = new JPanel(new FlowLayout());
+		contentpane4.add(summText);
+		contentpane4.add(cont);
+
+		basicframe.setContentPane(contentpane4);
+		Container c = frame.getContentPane();
+        c.setBackground(Color.WHITE);
+        // adjust to need.
+        Dimension d = new Dimension(640,480);
+        c.setPreferredSize(d);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if ("newgame".equals(e.getActionCommand())) {
@@ -217,53 +200,25 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 		}
 		else if ("continue".equals(e.getActionCommand())) {
 			//Press Continue on HomeScreen
-			//Load safe file:
-			this.BetweenRounds(this.frame);
-			this.frame.pack();
-			this.frame.setVisible(true);
 		}
 		else if ("exit".equals(e.getActionCommand())) {
 			//Press Exit on HomeScreen
-			//Save state to safe file
 			this.frame.dispatchEvent(new WindowEvent(this.frame, WindowEvent.WINDOW_CLOSING));
 		}
 		else if ("NewGameAdvance".equals(e.getActionCommand())) {
-			//Press Advance on NewGame
-			//Copy resource file to save file + add team + add save file name
-			this.BetweenRounds(this.frame);
+			//Press Exit on NewGame
+		}
+		else if ("matchScreen".equals(e.getActionCommand())) {
+			this.matchScreen(this.frame);
 			this.frame.pack();
 			this.frame.setVisible(true);
 		}
-		else if ("BetweenRoundsNextMatch".equals(e.getActionCommand())) {
-			//Press Next Match on BetweenRounds
-			//this.NextMatch(this.frame);
-			//this.frame.pack();
-			//this.frame.setVisible(true);
+		else if ("goToSummary".equals(e.getActionCommand())) {
+			this.summaryScreen(this.frame);
+			this.frame.pack();
+			this.frame.setVisible(true);
 		}
-		else if ("BetweenRoundsTransfers".equals(e.getActionCommand())) {
-			//Press Transfers on BetweenRounds
-			//this.Transfers(this.frame);
-			//this.frame.pack();
-			//this.frame.setVisible(true);
-		}
-		else if ("BetweenRoundsTeamManagement".equals(e.getActionCommand())) {
-			//Press Team Management on BetweenRounds
-			//this.TeamManagement(this.frame);
-			//this.frame.pack();
-			//this.frame.setVisible(true);
-		}
-		else if ("BetweenRoundsToureyOverview".equals(e.getActionCommand())) {
-			//Press Tourney Overview on BetweenRounds
-			//this.TourneyOverview(this.frame);
-			//this.frame.pack();
-			//this.frame.setVisible(true);
-		}
-		else if ("BetweenRoundsSave".equals(e.getActionCommand())) {
-			//Press Save on BetweenRounds
-			//Save state to save file
-		}
-		else if ("BetweenRoundsHomeScreen".equals(e.getActionCommand())) {
-			//Press Home Screen on BetweenRounds
+		else if ("cont".equals(e.getActionCommand())){
 			this.HomeScreen(this.frame);
 			this.frame.pack();
 			this.frame.setVisible(true);
@@ -291,4 +246,10 @@ public class OwnConverter implements ActionListener, ListSelectionListener{
 			}
 		}
 	}
+	
+	public static void main(String[] args) {
+		OwnConverter basicframe = new OwnConverter("Soccer Manager");
+		basicframe.createAndShowGUI();
+    }
+
 }
