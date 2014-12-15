@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  *
  * @author user
  */
-public class State extends JPanel {
+public abstract class State extends JPanel {
     
     GridBagConstraints c = null;
     GridBagLayout layout = null;
@@ -40,4 +40,5 @@ public class State extends JPanel {
         });
     }
     
+    abstract void createGUI();
 }

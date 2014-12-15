@@ -20,34 +20,36 @@ import javax.swing.JPanel;
  *
  * @author user
  */
-public class MenuMain extends State{
-    
-    public MenuMain(){
-	layout = new GridBagLayout();
-        this.setLayout(layout);
-        c = new GridBagConstraints();
+public class MenuMain extends State {
 
-	
+    public MenuMain() {
+
+    }
+
+    public void createGUI() {
+	layout = new GridBagLayout();
+	this.setLayout(layout);
+	c = new GridBagConstraints();
+
 	JButton buttonNew = new JButton();
 	c.weightx = 0.5;
-        c.gridx = 1;
-        c.gridy = 0;
-        createButton(buttonNew, "New game", c, layout);
+	c.gridx = 1;
+	c.gridy = 0;
+	createButton(buttonNew, "New game", c, layout);
 	attachStateChanger(buttonNew, new MenuNew());
-	
+
 	JButton buttonContinue = new JButton();
 	c.weightx = 0.5;
-        c.gridx = 1;
-        c.gridy = 1;
-        createButton(buttonContinue, "Continue game", c, layout);
-	attachStateChanger(buttonContinue, new TournamentOverview());
-	
+	c.gridx = 1;
+	c.gridy = 1;
+	createButton(buttonContinue, "Continue game", c, layout);
+	//attachStateChanger(buttonContinue, new MenuBetweenRounds());
+
 	JButton buttonExit = new JButton();
 	c.weightx = 0.5;
-        c.gridx = 1;
-        c.gridy = 2;
-        createButton(buttonExit, "Exit", c, layout);
-	attachStateChanger(buttonExit, new MenuNew());
+	c.gridx = 1;
+	c.gridy = 2;
+	createButton(buttonExit, "Exit", c, layout);
+	attachStateChanger(buttonExit, new MenuMain());
     }
-    
 }
