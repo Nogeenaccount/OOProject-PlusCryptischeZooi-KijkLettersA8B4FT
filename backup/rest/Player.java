@@ -1,6 +1,5 @@
 package rest;
 
-
 public class Player {
 
 	/**
@@ -61,7 +60,6 @@ public class Player {
 		return str;
 	}
 
-	
 	
 	// getters/setters
 	public String getPlayerName() {
@@ -135,10 +133,6 @@ public class Player {
 	public void setInjured(int injured) {
 		this.injured = injured;
 	}
-	
-	public int getAttributes() {
-		int totaal = this.getEndurance() + this.getOffence() + this.getDefence();
-		return totaal;
-	}
-
 }
+
+

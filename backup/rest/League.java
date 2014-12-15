@@ -171,6 +171,7 @@ public class League {
     }
 
     //NEW Getters & setters
+
     public String getGameName() {
 	return gameName;
     }
@@ -216,7 +217,7 @@ public class League {
 	    chosenTeam.appendChild(doc.createTextNode(this.getChosenTeam()));
 	    rootElement.appendChild(chosenTeam);
 
-	    //Element Teams
+    	//Element Teams
 	    for (int i = 0; i < this.teams.size(); i++) {
 		Element team = doc.createElement("team");
 		Attr name = doc.createAttribute("name");
@@ -316,7 +317,7 @@ public class League {
 	    DOMSource source = new DOMSource(doc);
 	    StreamResult result = new StreamResult(new File(filePath));
 
-	    // Output to console for testing
+    	// Output to console for testing
 	    // StreamResult result = new StreamResult(System.out);
 	    transformer.transform(source, result);
 
