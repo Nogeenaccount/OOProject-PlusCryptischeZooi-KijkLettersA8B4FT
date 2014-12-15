@@ -26,7 +26,7 @@ public class StateManager {
     }
 
     public StateManager() {
-	currentState = new MenuMain();	
+	currentState = new MenuMain();
 	currentState.createGUI();
 	guiFrame.add(currentState);
 	guiFrame.setSize(1200, 800);
@@ -42,6 +42,7 @@ public class StateManager {
 	newState.createGUI();
 	guiFrame.add(newState);
 	guiFrame.validate();
+	currentState = newState;
     }
     
     public static League getLeague() {

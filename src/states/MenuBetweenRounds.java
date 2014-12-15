@@ -30,8 +30,7 @@ public class MenuBetweenRounds extends State {
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 0;
-			//Reference to non-existent state
-	//StateManager.States.NEXT_MATCH
+	
 	createButton(buttonNextMatch, "Next Match", c, layout);
 	attachStateChanger(buttonNextMatch, new MenuMain());
 
@@ -39,8 +38,7 @@ public class MenuBetweenRounds extends State {
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 1;
-			//Reference to non-existent state
-	//StateManager.States.TRANSFERS
+	
 	createButton(buttonTransfers, "Transfers", c, layout);
 	attachStateChanger(buttonTransfers, new MenuMain());
 
@@ -48,8 +46,7 @@ public class MenuBetweenRounds extends State {
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 2;
-			//Reference to non-existent state
-	//StateManager.States.TEAM_MANAGEMENT
+	
 	createButton(buttonTeamManagement, "Team Management", c, layout);
 	attachStateChanger(buttonTeamManagement, new MenuMain());
 
@@ -79,8 +76,7 @@ public class MenuBetweenRounds extends State {
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 5;
-			//Reference to non-existent state
-	//StateManager.States.TRANSFERS
+	
 	createButton(buttonHomeScreen, "Back to Home Screen", c, layout);
 	attachStateChanger(buttonHomeScreen, new MenuMain());
 

@@ -66,5 +66,13 @@ public class MenuNew extends State {
 	c.gridx = 1;
 	c.gridy = 2;
 	createButton(buttonAdvance, "Advance", c, layout);
+	attachStateChanger(buttonAdvance, new MenuMain());
+	
+	JButton buttonBack = new JButton();
+	c.weightx = 0.5;
+	c.gridx = 1;
+	c.gridy = 3;
+	createButton(buttonBack, "Back", c, layout);
+	attachStateChanger(buttonBack, new MenuMain());
     }
 }

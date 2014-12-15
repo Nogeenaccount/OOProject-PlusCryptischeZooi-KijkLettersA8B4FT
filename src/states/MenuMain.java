@@ -43,13 +43,13 @@ public class MenuMain extends State {
 	c.gridx = 1;
 	c.gridy = 1;
 	createButton(buttonContinue, "Continue game", c, layout);
-	//attachStateChanger(buttonContinue, new MenuBetweenRounds());
+	attachStateChanger(buttonContinue, new MenuBetweenRounds());
 
 	JButton buttonExit = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 2;
 	createButton(buttonExit, "Exit", c, layout);
-	attachStateChanger(buttonExit, new MenuMain());
+	attachStateChanger(buttonExit, new Exit());
     }
 }
