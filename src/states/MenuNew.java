@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ooproject.states;
+package states;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -75,7 +75,8 @@ public class MenuNew extends State{
 		c.weightx = 0.5;
 		c.gridx = 1;
 		c.gridy = 2;
-		createButton(buttonAdvance, "Advance", c, layout, StateManager.States.TOURNAMENT_VIEW);
+		createButton(buttonAdvance, "Advance", c, layout);
+		attachStateChanger(buttonAdvance, new TournamentOverview());
 		
 		//JPanel contentpane2 = new JPanel(new FlowLayout());
 		//contentpane2.add(textfield1, BorderLayout.NORTH);

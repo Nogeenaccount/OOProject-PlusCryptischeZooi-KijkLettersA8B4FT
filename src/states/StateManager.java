@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ooproject.states;
+package states;
 
+import rest.League;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SpringLayout.Constraints;
@@ -17,6 +18,7 @@ public class StateManager {
 
     static State currentState;
     static JFrame guiFrame = new JFrame();
+    static League tempLeague = new League("", 0, "", "");
     //public static StateManager statemanager = new StateManager();
     
     public enum States {
@@ -32,25 +34,20 @@ public class StateManager {
 	guiFrame.setVisible(true);
     }
 
-    public static void ChangeState(States requestedState){
+    public static void ChangeState(State requestedState){
 	State newState = null;
-	switch(requestedState){
-            case MAIN_MENU:
-            	newState = new MenuMain();
-            break;
-	    case NEW_GAME:
-            	newState = new MenuNew();
-            break;
-	    case TOURNAMENT_VIEW:
-            	newState = new TournamentOverview();
-            break;
-	    case EXIT:
-            	System.exit(0);
-            break;
-	}
+        newState = requestedState;
 	guiFrame.remove(currentState);
 	guiFrame.add(newState);
 	guiFrame.validate();
+    }
+    
+    public static League getLeague() {
+    	return tempLeague;
+    }
+    
+    public static void setLeague(League someLeague) {
+    	tempLeague = someLeague;
     }
     
     public static void main(String[] args) {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ooproject.states;
+package states;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -32,19 +32,22 @@ public class MenuMain extends State{
 	c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 0;
-        createButton(buttonNew, "New game", c, layout, StateManager.States.NEW_GAME);
+        createButton(buttonNew, "New game", c, layout);
+	attachStateChanger(buttonNew, new MenuNew());
 	
 	JButton buttonContinue = new JButton();
 	c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 1;
-        createButton(buttonContinue, "Continue game", c, layout, StateManager.States.TOURNAMENT_VIEW);
+        createButton(buttonContinue, "Continue game", c, layout);
+	attachStateChanger(buttonContinue, new TournamentOverview());
 	
 	JButton buttonExit = new JButton();
 	c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 2;
-        createButton(buttonExit, "Exit", c, layout, StateManager.States.EXIT);
+        createButton(buttonExit, "Exit", c, layout);
+	attachStateChanger(buttonExit, new MenuNew());
     }
     
 }

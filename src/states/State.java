@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ooproject.states;
+package states;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -23,19 +23,21 @@ public class State extends JPanel {
     GridBagLayout layout = null;
     
     protected void createButton(JButton button, String label, 
-            GridBagConstraints constraints, GridBagLayout layout, StateManager.States newState){
+            GridBagConstraints constraints, GridBagLayout layout){
         button.setText(label);
         button.setPreferredSize(new Dimension(200,50));
         layout.setConstraints(button, constraints);
 	
+        this.add(button);
+    }
+    
+    protected void attachStateChanger(JButton button, State newState){
 	button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 StateManager.ChangeState(newState);
             }
         });
-	
-        this.add(button);
     }
     
 }
