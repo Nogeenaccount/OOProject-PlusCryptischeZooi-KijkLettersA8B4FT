@@ -27,6 +27,7 @@ public class StateManager {
     public StateManager() {
 	currentState = new MenuMain();
 	currentState.createGUI();
+	currentState.enableButtons();
 	guiFrame.add(currentState);
 	guiFrame.setSize(1200, 800);
 	guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,6 +40,7 @@ public class StateManager {
         newState = requestedState;
 	guiFrame.remove(currentState);
 	newState.createGUI();
+	newState.enableButtons();
 	guiFrame.add(newState);
 	guiFrame.validate();
 	currentState = newState;

@@ -48,5 +48,7 @@ public abstract class State extends JPanel {
     }
     
     abstract void createGUI();
-    abstract void enableButtons();
+    public void enableButtons(){
+	
+    }
 }

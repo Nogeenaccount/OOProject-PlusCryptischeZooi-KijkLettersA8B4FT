@@ -51,7 +51,6 @@ public class MenuMain extends State {
 	c.gridy = 1;
 	createButton(buttonContinue, "Continue game", c, layout);
 	attachStateChanger(buttonContinue, new MenuBetweenRounds());
-	enableContinue();
 	
 	//exitbutton
 	c.weightx = 0.5;
@@ -61,7 +60,7 @@ public class MenuMain extends State {
 	attachStateChanger(buttonExit, new Exit());
     }
 
-    public void enableContinue() {
+    public void enableButtons() {
 	try {
 	    BufferedReader br = new BufferedReader(new FileReader("SaveGame.xml"));
 	    String tonton = br.readLine();

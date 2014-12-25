@@ -19,6 +19,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import rest.Launcher;
 import rest.League;
 
@@ -50,18 +52,18 @@ public class MenuNew extends State {
 	}
 	input.setOpaque(true);
 	input.setPreferredSize(new Dimension(200, 20));
-
-	c.gridx = 1;
-	c.gridy = 0;
-	layout.setConstraints(input, c);
-	//input.setActionCommand("NewGameName");
-	this.add(input);
 	input.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 enableButtons();
             }
         });
+	
+	c.gridx = 1;
+	c.gridy = 0;
+	layout.setConstraints(input, c);
+	//input.setActionCommand("NewGameName");
+	this.add(input);
 
 	//create teamlist
 	teamList = new JList(array1);
@@ -73,7 +75,12 @@ public class MenuNew extends State {
 	c.gridy = 1;
 	layout.setConstraints(teamScroller, c);
 	this.add(teamScroller);
-	
+	teamList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                enableButtons();
+            }
+        });
 	
 	
 	//create advancebutton
