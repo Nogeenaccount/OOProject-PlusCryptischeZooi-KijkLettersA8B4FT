@@ -28,6 +28,13 @@ public abstract class State extends JPanel {
         button.setPreferredSize(new Dimension(200,50));
         layout.setConstraints(button, constraints);
 	
+	button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                enableButtons();
+            }
+        });
+	
         this.add(button);
     }
     
@@ -41,4 +48,5 @@ public abstract class State extends JPanel {
     }
     
     abstract void createGUI();
+    abstract void enableButtons();
 }

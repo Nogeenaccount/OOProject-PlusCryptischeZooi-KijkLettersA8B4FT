@@ -18,7 +18,6 @@ public class StateManager {
 
     static State currentState;
     static JFrame guiFrame = new JFrame();
-    static League tempLeague = new League("", 0, "", "");
     //public static StateManager statemanager = new StateManager();
     
     public enum States {
@@ -45,15 +44,4 @@ public class StateManager {
 	currentState = newState;
     }
     
-    public static League getLeague() {
-    	return tempLeague;
-    }
-    
-    public static void setLeague(League someLeague) {
-    	tempLeague = someLeague;
-    }
-    
-    public static void main(String[] args) {
-	StateManager sm = new StateManager();
-    }
 }

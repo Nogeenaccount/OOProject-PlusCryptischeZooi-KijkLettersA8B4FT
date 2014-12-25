@@ -12,6 +12,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -22,6 +25,10 @@ import javax.swing.JPanel;
  */
 public class MenuMain extends State {
 
+    JButton buttonNew = new JButton();
+    JButton buttonContinue = new JButton();
+    JButton buttonExit = new JButton();
+
     public MenuMain() {
 
     }
@@ -31,25 +38,41 @@ public class MenuMain extends State {
 	this.setLayout(layout);
 	c = new GridBagConstraints();
 
-	JButton buttonNew = new JButton();
+	//new game button
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 0;
 	createButton(buttonNew, "New game", c, layout);
 	attachStateChanger(buttonNew, new MenuNew());
 
-	JButton buttonContinue = new JButton();
+	//continue game button
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 1;
 	createButton(buttonContinue, "Continue game", c, layout);
 	attachStateChanger(buttonContinue, new MenuBetweenRounds());
-
-	JButton buttonExit = new JButton();
+	enableContinue();
+	
+	//exitbutton
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 2;
 	createButton(buttonExit, "Exit", c, layout);
 	attachStateChanger(buttonExit, new Exit());
+    }
+
+    public void enableContinue() {
+	try {
+	    BufferedReader br = new BufferedReader(new FileReader("SaveGame.xml"));
+	    String tonton = br.readLine();
+	    //System.out.println(tonton);
+	    if (tonton == null) {
+		//System.out.println(tonton);
+		buttonContinue.setEnabled(false);
+	    }
+	    br.close();
+	} catch (IOException e1) {
+	    e1.printStackTrace();
+	}
     }
 }

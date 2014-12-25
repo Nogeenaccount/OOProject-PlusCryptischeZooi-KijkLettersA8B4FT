@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import rest.Launcher;
 
 @SuppressWarnings("serial")
 public class MenuBetweenRounds extends State {
@@ -68,7 +69,7 @@ public class MenuBetweenRounds extends State {
 	buttonSave.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
-		StateManager.getLeague().writeToXML("SaveGame.xml");
+		Launcher.getLeague().writeToXML("SaveGame.xml");
 	    }
 	});
 
@@ -89,10 +90,10 @@ public class MenuBetweenRounds extends State {
 	textFieldBudget.setPreferredSize(new Dimension(300, 50));
 
 	int yourBudget = 0;
-	String yourTeam = StateManager.getLeague().getChosenTeam();
-	for (int i = 0; i < StateManager.getLeague().getTeams().size(); i++) {
-	    if (StateManager.getLeague().getTeams().get(i).getTeamName().equals(yourTeam)) {
-		yourBudget = StateManager.getLeague().getTeams().get(i).getBudget();
+	String yourTeam = Launcher.getLeague().getChosenTeam();
+	for (int i = 0; i < Launcher.getLeague().getTeams().size(); i++) {
+	    if (Launcher.getLeague().getTeams().get(i).getTeamName().equals(yourTeam)) {
+		yourBudget = Launcher.getLeague().getTeams().get(i).getBudget();
 	    }
 	}
 
