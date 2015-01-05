@@ -116,7 +116,7 @@ public class League {
 		league.add(team);
 
 	    }
-	    System.out.println("succeeded!");
+	    System.out.println("Read file: " + fileName);
 	    return league;
 	} catch (Exception e) {
 	    e.printStackTrace();
@@ -320,7 +320,7 @@ public class League {
 	    // StreamResult result = new StreamResult(System.out);
 	    transformer.transform(source, result);
 
-	    System.out.println("File saved!");
+	    System.out.println("Save file: " + filePath);
 
 	} catch (ParserConfigurationException | TransformerException e) {
 	    // TODO Auto-generated catch block

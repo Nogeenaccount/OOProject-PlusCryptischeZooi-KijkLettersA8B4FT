@@ -13,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import rest.Launcher;
 
 @SuppressWarnings("serial")
 public class MenuBetweenRounds extends State {
@@ -33,32 +32,30 @@ public class MenuBetweenRounds extends State {
 	c.gridy = 0;
 	
 	createButton(buttonNextMatch, "Next Match", c, layout);
-	attachStateChanger(buttonNextMatch, new MenuMain());
+	attachStateChanger(buttonNextMatch, new MenuNextMatch());
 
 	JButton buttonTransfers = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 1;
-	
 	createButton(buttonTransfers, "Transfers", c, layout);
-	attachStateChanger(buttonTransfers, new MenuMain());
+	attachStateChanger(buttonTransfers, new MenuTransfers());
 
 	JButton buttonTeamManagement = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 2;
-	
 	createButton(buttonTeamManagement, "Team Management", c, layout);
-	attachStateChanger(buttonTeamManagement, new MenuMain());
+	attachStateChanger(buttonTeamManagement, new MenuTeamManagement());
 
 	JButton buttonTourneyOverview = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 3;
-			//Reference to non-existent state
+	//Reference to non-existent state
 	//StateManager.States.TRANSFERS
 	createButton(buttonTourneyOverview, "Tourney Overview", c, layout);
-	attachStateChanger(buttonTourneyOverview, new MenuMain());
+	attachStateChanger(buttonTourneyOverview, new MenuTourneyOverview());
 
 	JButton buttonSave = new JButton();
 	c.weightx = 0.5;
@@ -69,7 +66,7 @@ public class MenuBetweenRounds extends State {
 	buttonSave.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
-		Launcher.getLeague().writeToXML("SaveGame.xml");
+		StateManager.getLeague().writeToXML("SaveGame.xml");
 	    }
 	});
 
@@ -87,22 +84,24 @@ public class MenuBetweenRounds extends State {
 	c.gridy = 6;
 
 	textFieldBudget.setOpaque(true);
-	textFieldBudget.setPreferredSize(new Dimension(300, 50));
+	textFieldBudget.setPreferredSize(new Dimension(300, 100));
 
 	int yourBudget = 0;
-	String yourTeam = Launcher.getLeague().getChosenTeam();
-	for (int i = 0; i < Launcher.getLeague().getTeams().size(); i++) {
-	    if (Launcher.getLeague().getTeams().get(i).getTeamName().equals(yourTeam)) {
-		yourBudget = Launcher.getLeague().getTeams().get(i).getBudget();
+	String yourTeam = StateManager.getLeague().getChosenTeam();
+	for (int i = 0; i < StateManager.getLeague().getTeams().size(); i++) {
+	    if (StateManager.getLeague().getTeams().get(i).getTeamName().equals(yourTeam)) {
+		yourBudget = StateManager.getLeague().getTeams().get(i).getBudget();
 	    }
 	}
 
 	//Get SomeResult and 
-	String display = "Budget: " + yourBudget + "\n" + "Last Result: " + "++Some result++" + "\n" + "Next Opponent: " + "++Some opponent++";
+	String display = "Name: " + StateManager.getLeague().getGameName() + "\n" + "Your team: " + StateManager.getLeague().getChosenTeam() +"\n"+ "Budget: " + yourBudget + "\n" + "Last Result: " + "++Some result++" + "\n" + "Next Opponent: " + "++Some opponent++";
 
 	textFieldBudget.setText(display);
 	textFieldBudget.setEditable(false);
 	this.add(textFieldBudget);
 	layout.setConstraints(textFieldBudget, c);
-    }
+	
+	System.out.println("Assuming default opstelling");
+	}
 }
