@@ -1,3 +1,6 @@
+
+import rest.League;
+
 public class MatchResultTest {
 	public static void main(String[] args) {
 		League league = League.readResources("resource.xml");
