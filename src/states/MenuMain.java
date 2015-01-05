@@ -42,7 +42,9 @@ public class MenuMain extends State {
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 1;
-	createButton(buttonContinue, "Continue game", c, layout);
+	String buttonContinueString = "<html><ul><li>continue</li><li>second</li><li>third</li></ul></html>";
+	createButton(buttonContinue, "Hello", c, layout);
+	//buttonContinue
 	attachStateChanger(buttonContinue, new MenuBetweenRounds());
 
 	JButton buttonExit = new JButton();
