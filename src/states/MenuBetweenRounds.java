@@ -32,32 +32,30 @@ public class MenuBetweenRounds extends State {
 	c.gridy = 0;
 	
 	createButton(buttonNextMatch, "Next Match", c, layout);
-	attachStateChanger(buttonNextMatch, new MenuMain());
+	attachStateChanger(buttonNextMatch, new MenuNextMatch());
 
 	JButton buttonTransfers = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 1;
-	
 	createButton(buttonTransfers, "Transfers", c, layout);
-	attachStateChanger(buttonTransfers, new MenuMain());
+	attachStateChanger(buttonTransfers, new MenuTransfers());
 
 	JButton buttonTeamManagement = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 2;
-	
 	createButton(buttonTeamManagement, "Team Management", c, layout);
-	attachStateChanger(buttonTeamManagement, new MenuMain());
+	attachStateChanger(buttonTeamManagement, new MenuTeamManagement());
 
 	JButton buttonTourneyOverview = new JButton();
 	c.weightx = 0.5;
 	c.gridx = 1;
 	c.gridy = 3;
-			//Reference to non-existent state
+	//Reference to non-existent state
 	//StateManager.States.TRANSFERS
 	createButton(buttonTourneyOverview, "Tourney Overview", c, layout);
-	attachStateChanger(buttonTourneyOverview, new MenuMain());
+	attachStateChanger(buttonTourneyOverview, new MenuTourneyOverview());
 
 	JButton buttonSave = new JButton();
 	c.weightx = 0.5;
@@ -86,7 +84,7 @@ public class MenuBetweenRounds extends State {
 	c.gridy = 6;
 
 	textFieldBudget.setOpaque(true);
-	textFieldBudget.setPreferredSize(new Dimension(300, 50));
+	textFieldBudget.setPreferredSize(new Dimension(300, 100));
 
 	int yourBudget = 0;
 	String yourTeam = StateManager.getLeague().getChosenTeam();
@@ -97,11 +95,13 @@ public class MenuBetweenRounds extends State {
 	}
 
 	//Get SomeResult and 
-	String display = "Budget: " + yourBudget + "\n" + "Last Result: " + "++Some result++" + "\n" + "Next Opponent: " + "++Some opponent++";
+	String display = "Name: " + StateManager.getLeague().getGameName() + "\n" + "Your team: " + StateManager.getLeague().getChosenTeam() +"\n"+ "Budget: " + yourBudget + "\n" + "Last Result: " + "++Some result++" + "\n" + "Next Opponent: " + "++Some opponent++";
 
 	textFieldBudget.setText(display);
 	textFieldBudget.setEditable(false);
 	this.add(textFieldBudget);
 	layout.setConstraints(textFieldBudget, c);
-    }
+	
+	System.out.println("Assuming default opstelling");
+	}
 }

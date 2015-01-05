@@ -22,7 +22,7 @@ public class StateManager {
     //public static StateManager statemanager = new StateManager();
     
     public enum States {
-	MAIN_MENU, NEW_GAME, TOURNAMENT_VIEW, EXIT;
+	MAIN_MENU, NEW_GAME, TOURNAMENT_VIEW, NEXT_MATCH, EXIT;
     }
 
     public StateManager() {
@@ -33,6 +33,7 @@ public class StateManager {
 	guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	guiFrame.setTitle("Soccer Manager");
 	guiFrame.setVisible(true);
+
     }
 
     public static void ChangeState(State requestedState){

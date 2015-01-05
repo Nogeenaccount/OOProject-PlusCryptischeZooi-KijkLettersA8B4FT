@@ -1,7 +1,4 @@
-
-import rest.Team;
-
-
+package rest;
 public class MatchResult {
 	/**
 	 * offenceSum: returns the sum of offence in lineUp
