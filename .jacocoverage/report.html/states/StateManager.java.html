@@ -17,24 +17,24 @@ import javax.swing.SpringLayout.Constraints;
 public class StateManager {
 
     static State currentState;
-<span class="fc" id="L20">    static JFrame guiFrame = new JFrame();</span>
-<span class="fc" id="L21">    static League tempLeague = new League(&quot;&quot;, 0, &quot;&quot;, &quot;&quot;);</span>
+<span class="nc" id="L20">    static JFrame guiFrame = new JFrame();</span>
+<span class="nc" id="L21">    static League tempLeague = new League(&quot;&quot;, 0, &quot;&quot;, &quot;&quot;);</span>
     //public static StateManager statemanager = new StateManager();
     
 <span class="nc" id="L24">    public enum States {</span>
 <span class="nc" id="L25">	MAIN_MENU, NEW_GAME, TOURNAMENT_VIEW, NEXT_MATCH, EXIT;</span>
     }
 
-<span class="fc" id="L28">    public StateManager() {</span>
-<span class="fc" id="L29">	currentState = new MenuMain();</span>
-<span class="fc" id="L30">	currentState.createGUI();</span>
-<span class="fc" id="L31">	guiFrame.add(currentState);</span>
-<span class="fc" id="L32">	guiFrame.setSize(1200, 800);</span>
-<span class="fc" id="L33">	guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
-<span class="fc" id="L34">	guiFrame.setTitle(&quot;Soccer Manager&quot;);</span>
-<span class="fc" id="L35">	guiFrame.setVisible(true);</span>
+<span class="nc" id="L28">    public StateManager() {</span>
+<span class="nc" id="L29">	currentState = new MenuMain();</span>
+<span class="nc" id="L30">	currentState.createGUI();</span>
+<span class="nc" id="L31">	guiFrame.add(currentState);</span>
+<span class="nc" id="L32">	guiFrame.setSize(1200, 800);</span>
+<span class="nc" id="L33">	guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L34">	guiFrame.setTitle(&quot;Soccer Manager&quot;);</span>
+<span class="nc" id="L35">	guiFrame.setVisible(true);</span>
 
-<span class="fc" id="L37">    }</span>
+<span class="nc" id="L37">    }</span>
 
     public static void ChangeState(State requestedState){
 <span class="nc" id="L40">	State newState = null;</span>
@@ -55,7 +55,7 @@ public class StateManager {
 <span class="nc" id="L55">    }</span>
     
     public static void main(String[] args) {
-<span class="fc" id="L58">	StateManager sm = new StateManager();</span>
-<span class="fc" id="L59">    }</span>
+<span class="nc" id="L58">	StateManager sm = new StateManager();</span>
+<span class="nc" id="L59">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

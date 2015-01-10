@@ -26,28 +26,28 @@ import javax.swing.JPanel;
  * @author user
  */
 @SuppressWarnings(&quot;serial&quot;)
-<span class="fc" id="L29">public abstract class State extends JPanel {	</span>
+<span class="nc" id="L29">public abstract class State extends JPanel {	</span>
 	JFrame frame;
-<span class="fc" id="L31">    GridBagConstraints c = null;</span>
-<span class="fc" id="L32">    GridBagLayout layout = null;</span>
+<span class="nc" id="L31">    GridBagConstraints c = null;</span>
+<span class="nc" id="L32">    GridBagLayout layout = null;</span>
     
     protected void createButton(JButton button, String label, 
         GridBagConstraints constraints, GridBagLayout layout){
-<span class="fc" id="L36">        button.setText(label);</span>
-<span class="fc" id="L37">        button.setPreferredSize(new Dimension(400,100));</span>
-<span class="fc" id="L38">        layout.setConstraints(button, constraints);</span>
-<span class="fc" id="L39">        this.add(button);</span>
-<span class="fc" id="L40">    }</span>
+<span class="nc" id="L36">        button.setText(label);</span>
+<span class="nc" id="L37">        button.setPreferredSize(new Dimension(400,100));</span>
+<span class="nc" id="L38">        layout.setConstraints(button, constraints);</span>
+<span class="nc" id="L39">        this.add(button);</span>
+<span class="nc" id="L40">    }</span>
     
     
     protected void attachStateChanger(JButton button, State newState){
-<span class="fc" id="L44">	button.addActionListener(new ActionListener() {</span>
+<span class="nc" id="L44">	button.addActionListener(new ActionListener() {</span>
             @Override
             public void actionPerformed(ActionEvent e) {
 <span class="nc" id="L47">                StateManager.ChangeState(newState);</span>
 <span class="nc" id="L48">            }</span>
         });
-<span class="fc" id="L50">    }</span>
+<span class="nc" id="L50">    }</span>
     
     abstract void createGUI();
 }

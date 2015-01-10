@@ -40,80 +40,80 @@ import rest.League;
 //FINISHED
 public class MenuMain extends State {
 
-<span class="fc" id="L43">    public MenuMain() {</span>
+<span class="nc" id="L43">    public MenuMain() {</span>
 
-<span class="fc" id="L45">    }</span>
+<span class="nc" id="L45">    }</span>
 
     public void createGUI() {
-<span class="fc" id="L48">	layout = new GridBagLayout();</span>
-<span class="fc" id="L49">	this.setLayout(layout);</span>
-<span class="fc" id="L50">	c = new GridBagConstraints();</span>
+<span class="nc" id="L48">	layout = new GridBagLayout();</span>
+<span class="nc" id="L49">	this.setLayout(layout);</span>
+<span class="nc" id="L50">	c = new GridBagConstraints();</span>
 	
-<span class="fc" id="L52">	JTextArea invisi2 = new JTextArea();</span>
-<span class="fc" id="L53">	c.weightx = 0.5;</span>
-<span class="fc" id="L54">	c.gridx = 2;</span>
-<span class="fc" id="L55">	c.gridy = 2;</span>
-<span class="fc" id="L56">	layout.setConstraints(invisi2, c);</span>
-<span class="fc" id="L57">	invisi2.setPreferredSize(new Dimension(200, 200));</span>
-<span class="fc" id="L58">	invisi2.setOpaque(false);</span>
-<span class="fc" id="L59">	invisi2.setEditable(false);</span>
-<span class="fc" id="L60">	invisi2.setMargin(new Insets(200, 0, 0, 0));</span>
-<span class="fc" id="L61">	this.add(invisi2);</span>
+<span class="nc" id="L52">	JTextArea invisi2 = new JTextArea();</span>
+<span class="nc" id="L53">	c.weightx = 0.5;</span>
+<span class="nc" id="L54">	c.gridx = 2;</span>
+<span class="nc" id="L55">	c.gridy = 2;</span>
+<span class="nc" id="L56">	layout.setConstraints(invisi2, c);</span>
+<span class="nc" id="L57">	invisi2.setPreferredSize(new Dimension(200, 200));</span>
+<span class="nc" id="L58">	invisi2.setOpaque(false);</span>
+<span class="nc" id="L59">	invisi2.setEditable(false);</span>
+<span class="nc" id="L60">	invisi2.setMargin(new Insets(200, 0, 0, 0));</span>
+<span class="nc" id="L61">	this.add(invisi2);</span>
 	
-<span class="fc" id="L63">	JButton buttonNew = new JButton(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\NewGameButton.png&quot;));</span>
-<span class="fc" id="L64">	c.weightx = 0.5;</span>
-<span class="fc" id="L65">	c.gridx = 2;</span>
-<span class="fc" id="L66">	c.gridy = 3;</span>
-<span class="fc" id="L67">	createButton(buttonNew, &quot;&quot;, c, layout);</span>
-<span class="fc" id="L68">	buttonNew.setMargin(new Insets(0, 0, 0, 0));</span>
-<span class="fc" id="L69">	buttonNew.setMaximumSize(new Dimension(400, 80));</span>
-<span class="fc" id="L70">	attachStateChanger(buttonNew, new MenuNew());</span>
+<span class="nc" id="L63">	JButton buttonNew = new JButton(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\NewGameButton.png&quot;));</span>
+<span class="nc" id="L64">	c.weightx = 0.5;</span>
+<span class="nc" id="L65">	c.gridx = 2;</span>
+<span class="nc" id="L66">	c.gridy = 3;</span>
+<span class="nc" id="L67">	createButton(buttonNew, &quot;&quot;, c, layout);</span>
+<span class="nc" id="L68">	buttonNew.setMargin(new Insets(0, 0, 0, 0));</span>
+<span class="nc" id="L69">	buttonNew.setMaximumSize(new Dimension(400, 80));</span>
+<span class="nc" id="L70">	attachStateChanger(buttonNew, new MenuNew());</span>
 
-<span class="fc" id="L72">	JButton buttonContinue = new JButton(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\ContinueButton.png&quot;));</span>
-<span class="fc" id="L73">	c.weightx = 0.5;</span>
-<span class="fc" id="L74">	c.gridx = 2;</span>
-<span class="fc" id="L75">	c.gridy = 4;</span>
+<span class="nc" id="L72">	JButton buttonContinue = new JButton(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\ContinueButton.png&quot;));</span>
+<span class="nc" id="L73">	c.weightx = 0.5;</span>
+<span class="nc" id="L74">	c.gridx = 2;</span>
+<span class="nc" id="L75">	c.gridy = 4;</span>
 	
 	try {
-<span class="fc" id="L78">    	BufferedReader br = new BufferedReader(new FileReader(&quot;SaveGame.xml&quot;));</span>
-<span class="fc" id="L79">    	String tonton = br.readLine();</span>
-<span class="pc bpc" id="L80" title="1 of 2 branches missed.">		if (tonton == null) {</span>
+<span class="nc" id="L78">    	BufferedReader br = new BufferedReader(new FileReader(&quot;SaveGame.xml&quot;));</span>
+<span class="nc" id="L79">    	String tonton = br.readLine();</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">		if (tonton == null) {</span>
 <span class="nc" id="L81">		    buttonContinue.setEnabled(false);</span>
 		}
-<span class="fc" id="L83">		br.close();</span>
+<span class="nc" id="L83">		br.close();</span>
 <span class="nc" id="L84">	} catch (IOException e1) {</span>
 <span class="nc" id="L85">		e1.printStackTrace();</span>
-<span class="fc" id="L86">	}</span>
-<span class="fc" id="L87">	createButton(buttonContinue, &quot;&quot;, c, layout);</span>
-<span class="fc" id="L88">	buttonContinue.setMargin(new Insets(0, 0, 0, 0));</span>
-<span class="fc" id="L89">	buttonContinue.setMaximumSize(new Dimension(400, 100));</span>
-<span class="fc" id="L90">	attachStateChanger(buttonContinue, new MenuBetweenRounds());</span>
-<span class="fc" id="L91">	buttonContinue.addActionListener(new ActionListener() {</span>
+<span class="nc" id="L86">	}</span>
+<span class="nc" id="L87">	createButton(buttonContinue, &quot;&quot;, c, layout);</span>
+<span class="nc" id="L88">	buttonContinue.setMargin(new Insets(0, 0, 0, 0));</span>
+<span class="nc" id="L89">	buttonContinue.setMaximumSize(new Dimension(400, 100));</span>
+<span class="nc" id="L90">	attachStateChanger(buttonContinue, new MenuBetweenRounds());</span>
+<span class="nc" id="L91">	buttonContinue.addActionListener(new ActionListener() {</span>
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
 <span class="nc" id="L94">		StateManager.setLeague(League.readResources(&quot;SaveGame.xml&quot;));;</span>
 <span class="nc" id="L95">	    }</span>
 	});
 	
-<span class="fc" id="L98">	JButton buttonExit = new JButton(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\ExitButton.png&quot;));</span>
-<span class="fc" id="L99">	c.weightx = 0.5;</span>
-<span class="fc" id="L100">	c.gridx = 2;</span>
-<span class="fc" id="L101">	c.gridy = 5;</span>
+<span class="nc" id="L98">	JButton buttonExit = new JButton(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\ExitButton.png&quot;));</span>
+<span class="nc" id="L99">	c.weightx = 0.5;</span>
+<span class="nc" id="L100">	c.gridx = 2;</span>
+<span class="nc" id="L101">	c.gridy = 5;</span>
 	//&quot;&lt;html&gt;&lt;font size='6'&gt;Exit&lt;/font&gt;&lt;/html&gt;&quot;
-<span class="fc" id="L103">	createButton(buttonExit, &quot;&quot;, c, layout);</span>
-<span class="fc" id="L104">	buttonExit.setMargin(new Insets(0, 0, 0, 0));</span>
-<span class="fc" id="L105">	buttonExit.setMaximumSize(new Dimension(400, 100));</span>
-<span class="fc" id="L106">	attachStateChanger(buttonExit, new Exit());</span>
+<span class="nc" id="L103">	createButton(buttonExit, &quot;&quot;, c, layout);</span>
+<span class="nc" id="L104">	buttonExit.setMargin(new Insets(0, 0, 0, 0));</span>
+<span class="nc" id="L105">	buttonExit.setMaximumSize(new Dimension(400, 100));</span>
+<span class="nc" id="L106">	attachStateChanger(buttonExit, new Exit());</span>
 	
-<span class="fc" id="L108">	c.weightx = 0.5;</span>
-<span class="fc" id="L109">	c.gridheight = 6;</span>
-<span class="fc" id="L110">	c.gridwidth = 3;</span>
-<span class="fc" id="L111">	c.gridx = 2;</span>
-<span class="fc" id="L112">	c.gridy = 1;</span>
-<span class="fc" id="L113">	ImagePanel panel = new ImagePanel(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\FootbalStadiumSize.png&quot;).getImage(), c, layout);</span>
-<span class="fc" id="L114">	this.add(panel);</span>
+<span class="nc" id="L108">	c.weightx = 0.5;</span>
+<span class="nc" id="L109">	c.gridheight = 6;</span>
+<span class="nc" id="L110">	c.gridwidth = 3;</span>
+<span class="nc" id="L111">	c.gridx = 2;</span>
+<span class="nc" id="L112">	c.gridy = 1;</span>
+<span class="nc" id="L113">	ImagePanel panel = new ImagePanel(new ImageIcon(&quot;C:\\Users\\Stefan\\Desktop\\GUIFiles\\FootbalStadiumSize.png&quot;).getImage(), c, layout);</span>
+<span class="nc" id="L114">	this.add(panel);</span>
 	
 	//System.out.println(result());
-<span class="fc" id="L117">    }</span>
+<span class="nc" id="L117">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="MacBook-Pro.local" name="rest.TeamTest" skipped="0" tests="8" time="0.15" timestamp="2015-01-10T18:42:28">
+<testsuite errors="0" failures="0" hostname="MacBook-Pro.local" name="rest.TeamTest" skipped="0" tests="8" time="0.091" timestamp="2015-01-10T21:38:03">
   <properties>
     <property name="ant.file.type.OOProject" value="file" />
     <property name="libs.jsp-compiler.javadoc" value="" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rest.TeamTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/test/results/TEST-rest.TeamTest.xml crashfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junitvmwatcher7044976565232018400.properties propsfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junit3136030535616170990.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rest.TeamTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/test/results/TEST-rest.TeamTest.xml crashfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junitvmwatcher1465372997937077865.properties propsfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junit3257160270085383945.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -248,6 +248,7 @@
     <property name="libs.DataBindingME-SVG.src" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/mobility/sources/netbeans_databindingme_svg-src.zip" />
     <property name="dist.jar" value="dist/OOProject.jar" />
     <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="OOProject" />
     <property name="netbeans.hash.code" value="unique=NB_JAVA_WEBCOMMON_WEBEE_MOB_CND_GROOVY_PHP_GFMOD03adcf901-5660-4283-b291-9458869a7308_acd2733b-f72a-4dc4-aa93-6cc0c51fc720" />
@@ -295,10 +296,10 @@
     <property name="work.dir" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project" />
     <property name="libs.jaxb.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-impl.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-xjc.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb1-impl.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jaxb-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
-    <property name="libs.j2me_common_ant.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/mobility/modules/org-netbeans-modules-j2me-common-ant.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/org-netbeans-modules-classfile.jar" />
     <property name="dist.javadoc.dir" value="dist/javadoc" />
-    <property name="libs.spring-webmvc3.0.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/spring-3.0/spring-webmvc-3.2.7.RELEASE.jar" />
+    <property name="libs.j2me_common_ant.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/mobility/modules/org-netbeans-modules-j2me-common-ant.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/org-netbeans-modules-classfile.jar" />
     <property name="libs.swing-layout.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/platform/modules/ext/swing-layout-1.0.4.jar" />
+    <property name="libs.spring-webmvc3.0.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/spring-3.0/spring-webmvc-3.2.7.RELEASE.jar" />
     <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
     <property name="libs.restlib.src" value="" />
     <property name="javac.source" value="1.8" />
@@ -315,8 +316,8 @@
     <property name="built-jar.properties" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
-    <property name="libs.jpa2-persistence.src" value="" />
     <property name="annotation.processing.enabled" value="true" />
+    <property name="libs.jpa2-persistence.src" value="" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.DataBindingME-SVG.maven-pom" value="" />
@@ -326,18 +327,18 @@
     <property name="libs.javaee-web-api-7.0.src" value="" />
     <property name="libs.primefaces.src" value="" />
     <property name="dist.dir" value="dist" />
-    <property name="libs.groovy-all.javadoc" value="" />
     <property name="ant.file.OOProject" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project/build.xml" />
+    <property name="libs.groovy-all.javadoc" value="" />
     <property name="testng.debug.mode" value="" />
-    <property name="libs.groovy-all.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/groovy/modules/ext/groovy-all.jar" />
     <property name="javac.fork" value="false" />
+    <property name="libs.groovy-all.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/groovy/modules/ext/groovy-all.jar" />
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
     <property name="default.javac.source" value="1.8" />
     <property name="debug-transport-by-os" value="dt_socket" />
     <property name="sun.jnu.encoding" value="UTF-8" />
     <property name="libs.MySQLDriver.src" value="" />
-    <property name="java.runtime.version" value="1.8.0_25-b17" />
     <property name="build.test.results.dir" value="build/test/results" />
+    <property name="java.runtime.version" value="1.8.0_25-b17" />
     <property name="jna.platform.library.path" value="/usr/lib:/usr/lib" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/platform/modules/ext/junit-4.10.jar" />
@@ -354,8 +355,8 @@
     <property name="endorsed.classpath" value="" />
     <property name="libs.absolutelayout.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.metro.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-rt.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
+    <property name="libs.metro.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-rt.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-tools.jar" />
     <property name="libs.jpa2-persistence.javadoc" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/mobility/modules/docs/netbeans_databindingme-api.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
@@ -411,8 +412,8 @@
   <testcase classname="rest.TeamTest" name="testbuyPlayer1" time="0.0" />
   <testcase classname="rest.TeamTest" name="testbuyPlayer2" time="0.0" />
   <testcase classname="rest.TeamTest" name="testshirtnumberTaken1" time="0.001" />
-  <testcase classname="rest.TeamTest" name="testshirtnumberFree1" time="0.0" />
-  <testcase classname="rest.TeamTest" name="testsellPlayer1" time="0.0" />
+  <testcase classname="rest.TeamTest" name="testshirtnumberFree1" time="0.001" />
+  <testcase classname="rest.TeamTest" name="testsellPlayer1" time="0.001" />
   <testcase classname="rest.TeamTest" name="testsellPlayer2" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

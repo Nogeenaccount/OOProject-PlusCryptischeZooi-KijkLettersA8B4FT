@@ -6,11 +6,11 @@
 	 * @return S
 	 */
 	public static double offenceSum(Team t){
-<span class="nc" id="L9">		double S = 0;</span>
-<span class="nc bnc" id="L10" title="All 2 branches missed.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
-<span class="nc" id="L11">			S += t.getPlayers().get(i).getOffence();</span>
+<span class="fc" id="L9">		double S = 0;</span>
+<span class="fc bfc" id="L10" title="All 2 branches covered.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
+<span class="fc" id="L11">			S += t.getPlayers().get(i).getOffence();</span>
 		}		
-<span class="nc" id="L13">		return (S/t.getPlayers().size())*4.5;</span>
+<span class="fc" id="L13">		return (S/t.getPlayers().size())*4.5;</span>
 	}
 	
 	/**
@@ -19,11 +19,11 @@
 	 * @return S
 	 */
 	public static double defenceSum(Team t){
-<span class="nc" id="L22">		double S = 0;</span>
-<span class="nc bnc" id="L23" title="All 2 branches missed.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
-<span class="nc" id="L24">			S += t.getPlayers().get(i).getDefence();</span>
+<span class="fc" id="L22">		double S = 0;</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
+<span class="fc" id="L24">			S += t.getPlayers().get(i).getDefence();</span>
 		}		
-<span class="nc" id="L26">		return (S/t.getPlayers().size())*5.5;</span>
+<span class="fc" id="L26">		return (S/t.getPlayers().size())*5.5;</span>
 	}
 
 	/**
@@ -32,11 +32,11 @@
 	 * @return S
 	 */
 	public static double enduranceSum(Team t){
-<span class="nc" id="L35">		double S = 0;</span>
-<span class="nc bnc" id="L36" title="All 2 branches missed.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
-<span class="nc" id="L37">			S += t.getPlayers().get(i).getEndurance();</span>
+<span class="fc" id="L35">		double S = 0;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
+<span class="fc" id="L37">			S += t.getPlayers().get(i).getEndurance();</span>
 		}		
-<span class="nc" id="L39">		return (S/t.getPlayers().size())*11;</span>
+<span class="fc" id="L39">		return (S/t.getPlayers().size())*11;</span>
 	}
 
 	/**

@@ -37,10 +37,10 @@ public class League {
 <span class="fc" id="L37">    }</span>
 
     public void add(Team team) {
-<span class="nc bnc" id="L40" title="All 2 branches missed.">	if (!teams.contains(team)) {</span>
-<span class="nc" id="L41">	    teams.add(team);</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">	if (!teams.contains(team)) {</span>
+<span class="fc" id="L41">	    teams.add(team);</span>
 	}
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L43">    }</span>
 
     /**
      * readResources: reads data out of resource XML file
@@ -50,23 +50,23 @@ public class League {
      */
     public static League readResources(String fileName) {
 	try {
-<span class="nc" id="L53">	    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();</span>
-<span class="nc" id="L54">	    DocumentBuilder db = dbf.newDocumentBuilder();</span>
-<span class="nc" id="L55">	    Document doc = db.parse(new File(fileName));</span>
-<span class="nc" id="L56">	    doc.getDocumentElement().normalize();</span>
-<span class="nc" id="L57">	    NodeList leagueList = doc.getElementsByTagName(&quot;league&quot;);</span>
-<span class="nc" id="L58">	    Node lNode = leagueList.item(0);</span>
-<span class="nc" id="L59">	    Element lElement = (Element) lNode;</span>
+<span class="fc" id="L53">	    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();</span>
+<span class="fc" id="L54">	    DocumentBuilder db = dbf.newDocumentBuilder();</span>
+<span class="fc" id="L55">	    Document doc = db.parse(new File(fileName));</span>
+<span class="fc" id="L56">	    doc.getDocumentElement().normalize();</span>
+<span class="fc" id="L57">	    NodeList leagueList = doc.getElementsByTagName(&quot;league&quot;);</span>
+<span class="fc" id="L58">	    Node lNode = leagueList.item(0);</span>
+<span class="fc" id="L59">	    Element lElement = (Element) lNode;</span>
 
 	    //NEW Get attributes
-<span class="nc" id="L62">	    String leagueName = lElement.getAttribute(&quot;name&quot;);</span>
-<span class="nc" id="L63">	    int rounds = Integer.parseInt(lElement.getElementsByTagName(&quot;matchesLeft&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L64">	    String gameName = lElement.getElementsByTagName(&quot;gameName&quot;).item(0).getTextContent();</span>
-<span class="nc" id="L65">	    String chosenTeam = lElement.getElementsByTagName(&quot;chosenTeam&quot;).item(0).getTextContent();</span>
-<span class="nc" id="L66">	    League league = new League(leagueName, rounds, gameName, chosenTeam);</span>
+<span class="fc" id="L62">	    String leagueName = lElement.getAttribute(&quot;name&quot;);</span>
+<span class="fc" id="L63">	    int rounds = Integer.parseInt(lElement.getElementsByTagName(&quot;matchesLeft&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L64">	    String gameName = lElement.getElementsByTagName(&quot;gameName&quot;).item(0).getTextContent();</span>
+<span class="fc" id="L65">	    String chosenTeam = lElement.getElementsByTagName(&quot;chosenTeam&quot;).item(0).getTextContent();</span>
+<span class="fc" id="L66">	    League league = new League(leagueName, rounds, gameName, chosenTeam);</span>
 
-<span class="nc" id="L68">	    NodeList teamList = doc.getElementsByTagName(&quot;team&quot;);</span>
-<span class="nc" id="L69">	    NodeList playerlistxml = doc.getElementsByTagName(&quot;player&quot;);</span>
+<span class="fc" id="L68">	    NodeList teamList = doc.getElementsByTagName(&quot;team&quot;);</span>
+<span class="fc" id="L69">	    NodeList playerlistxml = doc.getElementsByTagName(&quot;player&quot;);</span>
 	    // predefine variables
 	    Node tNode;
 	    Element tElement;
@@ -86,38 +86,38 @@ public class League {
 	    Player player;
 	    int cc;
 	    int inj;
-<span class="nc" id="L89">	    int c = 0;</span>
-<span class="nc bnc" id="L90" title="All 2 branches missed.">	    for (int i = 0; i &lt; teamList.getLength(); i++) {</span>
-<span class="nc" id="L91">		tNode = teamList.item(i);</span>
-<span class="nc" id="L92">		tElement = (Element) tNode;</span>
-<span class="nc" id="L93">		teamName = tElement.getAttribute(&quot;name&quot;);</span>
-<span class="nc" id="L94">		stadiumName = tElement.getElementsByTagName(&quot;stadiumName&quot;).item(0).getTextContent();</span>
-<span class="nc" id="L95">		budget = Integer.parseInt(tElement.getElementsByTagName(&quot;budget&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L96">		team = new Team(teamName, stadiumName, budget);</span>
-<span class="nc" id="L97">		int j = tElement.getElementsByTagName(&quot;player&quot;).getLength();</span>
-<span class="nc bnc" id="L98" title="All 2 branches missed.">		for (int p = c; p &lt; (c + j); p++) {</span>
-<span class="nc" id="L99">		    pNode = playerlistxml.item(p);</span>
-<span class="nc" id="L100">		    pElement = (Element) pNode;</span>
-<span class="nc" id="L101">		    playerName = pElement.getAttribute(&quot;name&quot;);</span>
-<span class="nc" id="L102">		    number = Integer.parseInt(pElement.getElementsByTagName(&quot;shirtNumber&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L103">		    price = Integer.parseInt(pElement.getElementsByTagName(&quot;price&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L104">		    end = Integer.parseInt(pElement.getElementsByTagName(&quot;endurance&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L105">		    off = Integer.parseInt(pElement.getElementsByTagName(&quot;offence&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L106">		    def = Integer.parseInt(pElement.getElementsByTagName(&quot;defence&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L107">		    pos = pElement.getElementsByTagName(&quot;pos&quot;).item(0).getTextContent();</span>
-<span class="nc" id="L108">		    cc = Integer.parseInt(pElement.getElementsByTagName(&quot;cardCount&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L109">		    inj = Integer.parseInt(pElement.getElementsByTagName(&quot;injured&quot;).item(0).getTextContent());</span>
-<span class="nc" id="L110">		    player = new Player(playerName, number, price, end, off, def, pos, cc, inj);</span>
-<span class="nc" id="L111">		    team.add(player);</span>
+<span class="fc" id="L89">	    int c = 0;</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">	    for (int i = 0; i &lt; teamList.getLength(); i++) {</span>
+<span class="fc" id="L91">		tNode = teamList.item(i);</span>
+<span class="fc" id="L92">		tElement = (Element) tNode;</span>
+<span class="fc" id="L93">		teamName = tElement.getAttribute(&quot;name&quot;);</span>
+<span class="fc" id="L94">		stadiumName = tElement.getElementsByTagName(&quot;stadiumName&quot;).item(0).getTextContent();</span>
+<span class="fc" id="L95">		budget = Integer.parseInt(tElement.getElementsByTagName(&quot;budget&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L96">		team = new Team(teamName, stadiumName, budget);</span>
+<span class="fc" id="L97">		int j = tElement.getElementsByTagName(&quot;player&quot;).getLength();</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">		for (int p = c; p &lt; (c + j); p++) {</span>
+<span class="fc" id="L99">		    pNode = playerlistxml.item(p);</span>
+<span class="fc" id="L100">		    pElement = (Element) pNode;</span>
+<span class="fc" id="L101">		    playerName = pElement.getAttribute(&quot;name&quot;);</span>
+<span class="fc" id="L102">		    number = Integer.parseInt(pElement.getElementsByTagName(&quot;shirtNumber&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L103">		    price = Integer.parseInt(pElement.getElementsByTagName(&quot;price&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L104">		    end = Integer.parseInt(pElement.getElementsByTagName(&quot;endurance&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L105">		    off = Integer.parseInt(pElement.getElementsByTagName(&quot;offence&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L106">		    def = Integer.parseInt(pElement.getElementsByTagName(&quot;defence&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L107">		    pos = pElement.getElementsByTagName(&quot;pos&quot;).item(0).getTextContent();</span>
+<span class="fc" id="L108">		    cc = Integer.parseInt(pElement.getElementsByTagName(&quot;cardCount&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L109">		    inj = Integer.parseInt(pElement.getElementsByTagName(&quot;injured&quot;).item(0).getTextContent());</span>
+<span class="fc" id="L110">		    player = new Player(playerName, number, price, end, off, def, pos, cc, inj);</span>
+<span class="fc" id="L111">		    team.add(player);</span>
 		}
 
-<span class="nc" id="L114">		c += j;</span>
+<span class="fc" id="L114">		c += j;</span>
 
-<span class="nc" id="L116">		league.add(team);</span>
+<span class="fc" id="L116">		league.add(team);</span>
 
 	    }
-<span class="nc" id="L119">	    System.out.println(&quot;Read file: &quot; + fileName);</span>
-<span class="nc" id="L120">	    return league;</span>
+<span class="fc" id="L119">	    System.out.println(&quot;Read file: &quot; + fileName);</span>
+<span class="fc" id="L120">	    return league;</span>
 <span class="nc" id="L121">	} catch (Exception e) {</span>
 <span class="nc" id="L122">	    e.printStackTrace();</span>
 
@@ -147,7 +147,7 @@ public class League {
 
     // getters/setters
     public String getLeagueName() {
-<span class="nc" id="L150">	return leagueName;</span>
+<span class="fc" id="L150">	return leagueName;</span>
     }
 
     public void setLeagueName(String leaguename) {
@@ -155,7 +155,7 @@ public class League {
 <span class="nc" id="L155">    }</span>
 
     public int getRounds() {
-<span class="nc" id="L158">	return rounds;</span>
+<span class="fc" id="L158">	return rounds;</span>
     }
 
     public void setRounds(int rounds) {
@@ -163,7 +163,7 @@ public class League {
 <span class="nc" id="L163">    }</span>
 
     public ArrayList&lt;Team&gt; getTeams() {
-<span class="nc" id="L166">	return teams;</span>
+<span class="fc" id="L166">	return teams;</span>
     }
 
     public void setTeams(ArrayList&lt;Team&gt; teams) {

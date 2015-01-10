@@ -6,7 +6,7 @@ import java.util.List;
 public class Team {
 
 	private String teamName;
-<span class="nc" id="L9">	private List&lt;Player&gt; players = new ArrayList&lt;Player&gt;();</span>
+<span class="fc" id="L9">	private List&lt;Player&gt; players = new ArrayList&lt;Player&gt;();</span>
 	private LineUp lineUp;
 	private String stadiumName;
 	private int winStreak;
@@ -28,23 +28,23 @@ public class Team {
 	 * @param stadium
 	 * @param budget
 	 */
-<span class="nc" id="L31">	public Team(String name, String stadium, int budget) {</span>
-<span class="nc" id="L32">		teamName = name;</span>
-<span class="nc" id="L33">		stadiumName = stadium;</span>
-<span class="nc" id="L34">		this.budget = budget;</span>
+<span class="fc" id="L31">	public Team(String name, String stadium, int budget) {</span>
+<span class="fc" id="L32">		teamName = name;</span>
+<span class="fc" id="L33">		stadiumName = stadium;</span>
+<span class="fc" id="L34">		this.budget = budget;</span>
 
-<span class="nc" id="L36">		players = new ArrayList&lt;Player&gt;();</span>
-<span class="nc" id="L37">		lineUp = new LineUp();</span>
-<span class="nc" id="L38">		winStreak = 0;</span>
-<span class="nc" id="L39">		leagueScore = 0;</span>
-<span class="nc" id="L40">		played = 0;</span>
-<span class="nc" id="L41">		wins = 0;</span>
-<span class="nc" id="L42">		draws = 0;</span>
-<span class="nc" id="L43">		losses = 0;</span>
-<span class="nc" id="L44">		goalsMade = 0;</span>
-<span class="nc" id="L45">		goalsAgainst = 0;</span>
-<span class="nc" id="L46">		goalDifference = 0;</span>
-<span class="nc" id="L47">	}</span>
+<span class="fc" id="L36">		players = new ArrayList&lt;Player&gt;();</span>
+<span class="fc" id="L37">		lineUp = new LineUp();</span>
+<span class="fc" id="L38">		winStreak = 0;</span>
+<span class="fc" id="L39">		leagueScore = 0;</span>
+<span class="fc" id="L40">		played = 0;</span>
+<span class="fc" id="L41">		wins = 0;</span>
+<span class="fc" id="L42">		draws = 0;</span>
+<span class="fc" id="L43">		losses = 0;</span>
+<span class="fc" id="L44">		goalsMade = 0;</span>
+<span class="fc" id="L45">		goalsAgainst = 0;</span>
+<span class="fc" id="L46">		goalDifference = 0;</span>
+<span class="fc" id="L47">	}</span>
 
 	/**
 	 * add: adds player to the team
@@ -52,9 +52,9 @@ public class Team {
 	 * @param player
 	 */
 	public void add(Player player) {
-<span class="nc bnc" id="L55" title="All 2 branches missed.">		if (!players.contains(player))</span>
-<span class="nc" id="L56">			players.add(player);</span>
-<span class="nc" id="L57">	}</span>
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">		if (!players.contains(player))</span>
+<span class="fc" id="L56">			players.add(player);</span>
+<span class="fc" id="L57">	}</span>
 
 	/**
 	 * toString: turns Team into a printable String
@@ -86,17 +86,17 @@ public class Team {
 	 *            the player to be sold
 	 */
 	public void sellPlayer(Player x) {
-<span class="nc bnc" id="L89" title="All 2 branches missed.">		for (int i = 0; i &lt; this.players.size(); i++) {</span>
-<span class="nc" id="L90">			if (this.players.get(i).getPlayerName()</span>
-<span class="nc bnc" id="L91" title="All 2 branches missed.">					.equalsIgnoreCase(x.getPlayerName())) {</span>
-<span class="nc" id="L92">				int newBudget = this.budget + this.players.get(i).getPrice();</span>
-<span class="nc" id="L93">				this.players.remove(i);</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">		for (int i = 0; i &lt; this.players.size(); i++) {</span>
+<span class="fc" id="L90">			if (this.players.get(i).getPlayerName()</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">					.equalsIgnoreCase(x.getPlayerName())) {</span>
+<span class="fc" id="L92">				int newBudget = this.budget + this.players.get(i).getPrice();</span>
+<span class="fc" id="L93">				this.players.remove(i);</span>
 
-<span class="nc" id="L95">				this.setBudget(newBudget);</span>
+<span class="fc" id="L95">				this.setBudget(newBudget);</span>
 			}
 
 		}
-<span class="nc" id="L99">	}</span>
+<span class="fc" id="L99">	}</span>
 
 	/**
 	 * method to buy a player X constraint: your budget must be high enough to
@@ -106,15 +106,15 @@ public class Team {
 	 * @param x
 	 */
 	public void buyPlayer(Player x) {
-<span class="nc bnc" id="L109" title="All 2 branches missed.">		if (this.getBudget() &gt;= x.getPrice()) {</span>
-<span class="nc bnc" id="L110" title="All 2 branches missed.">			if (this.shirtnumberFree(x) != true) {</span>
-<span class="nc" id="L111">				x.setShirtNumber(this.availableShirtnumber());</span>
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">		if (this.getBudget() &gt;= x.getPrice()) {</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">			if (this.shirtnumberFree(x) != true) {</span>
+<span class="fc" id="L111">				x.setShirtNumber(this.availableShirtnumber());</span>
 			}
-<span class="nc" id="L113">			this.add(x);</span>
-<span class="nc" id="L114">			this.setBudget((this.getBudget() - x.getPrice()));</span>
+<span class="fc" id="L113">			this.add(x);</span>
+<span class="fc" id="L114">			this.setBudget((this.getBudget() - x.getPrice()));</span>
 
 		}
-<span class="nc" id="L117">	}</span>
+<span class="fc" id="L117">	}</span>
 
 	/**
 	 * method to determine the first available shirt number in your team.
@@ -122,13 +122,13 @@ public class Team {
 	 * @return the first available shirtnumber
 	 */
 	public int availableShirtnumber() {
-<span class="nc" id="L125">		int counter = 1;</span>
-<span class="nc bnc" id="L126" title="All 2 branches missed.">		while (this.shirtnumberTaken(counter) == true) {</span>
-<span class="nc" id="L127">			counter++;</span>
+<span class="fc" id="L125">		int counter = 1;</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">		while (this.shirtnumberTaken(counter) == true) {</span>
+<span class="fc" id="L127">			counter++;</span>
 
 		}
 
-<span class="nc" id="L131">		return counter;</span>
+<span class="fc" id="L131">		return counter;</span>
 
 	}
 
@@ -140,11 +140,11 @@ public class Team {
 	 * @return true if taken
 	 */
 	public boolean shirtnumberTaken(int number) {
-<span class="nc bnc" id="L143" title="All 2 branches missed.">		for (int i = 0; i &lt; this.players.size(); i++) {</span>
-<span class="nc bnc" id="L144" title="All 2 branches missed.">			if (this.players.get(i).getShirtNumber() == number)</span>
-<span class="nc" id="L145">				return true;</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">		for (int i = 0; i &lt; this.players.size(); i++) {</span>
+<span class="fc bfc" id="L144" title="All 2 branches covered.">			if (this.players.get(i).getShirtNumber() == number)</span>
+<span class="fc" id="L145">				return true;</span>
 		}
-<span class="nc" id="L147">		return false;</span>
+<span class="fc" id="L147">		return false;</span>
 	}
 
 	/**
@@ -155,14 +155,14 @@ public class Team {
 	 * @return True if free
 	 */
 	public boolean shirtnumberFree(Player x) {
-<span class="nc" id="L158">		int shirtNumber = x.getShirtNumber();</span>
+<span class="fc" id="L158">		int shirtNumber = x.getShirtNumber();</span>
 
-<span class="nc bnc" id="L160" title="All 2 branches missed.">		for (int i = 0; i &lt; this.players.size(); i++) {</span>
-<span class="nc bnc" id="L161" title="All 2 branches missed.">			if (this.players.get(i).getShirtNumber() == shirtNumber)</span>
-<span class="nc" id="L162">				return false;</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">		for (int i = 0; i &lt; this.players.size(); i++) {</span>
+<span class="fc bfc" id="L161" title="All 2 branches covered.">			if (this.players.get(i).getShirtNumber() == shirtNumber)</span>
+<span class="fc" id="L162">				return false;</span>
 
 		}
-<span class="nc" id="L165">		return true;</span>
+<span class="fc" id="L165">		return true;</span>
 	}
 
 	// transfers player x from team y to team this
@@ -177,7 +177,7 @@ public class Team {
 <span class="nc" id="L177">	}</span>
 
 	public List&lt;Player&gt; getPlayers() {
-<span class="nc" id="L180">		return players;</span>
+<span class="fc" id="L180">		return players;</span>
 	}
 
 	public void setPlayers(List&lt;Player&gt; players) {
@@ -185,7 +185,7 @@ public class Team {
 <span class="nc" id="L185">	}</span>
 
 	public String getStadiumName() {
-<span class="nc" id="L188">		return stadiumName;</span>
+<span class="fc" id="L188">		return stadiumName;</span>
 	}
 
 	public void setStadiumName(String stadiumName) {
@@ -201,12 +201,12 @@ public class Team {
 <span class="nc" id="L201">	}</span>
 
 	public int getBudget() {
-<span class="nc" id="L204">		return budget;</span>
+<span class="fc" id="L204">		return budget;</span>
 	}
 
 	public void setBudget(int budget) {
-<span class="nc" id="L208">		this.budget = budget;</span>
-<span class="nc" id="L209">	}</span>
+<span class="fc" id="L208">		this.budget = budget;</span>
+<span class="fc" id="L209">	}</span>
 
 	public int getLeagueScore() {
 <span class="nc" id="L212">		return leagueScore;</span>

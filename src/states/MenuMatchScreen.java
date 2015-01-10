@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import rest.threadTest;
+import rest.ThreadTest;
 
 @SuppressWarnings("serial")
 //WORKING WITH FILLER
@@ -48,8 +48,8 @@ public class MenuMatchScreen extends State {
 	matchProgress.setText( matchProgressTextPart1);
 	this.add(matchProgress);
 	
-	Thread t = new Thread(new threadTest());
-	rest.threadTest.setWorkSpace(matchProgress);
+	Thread t = new Thread(new ThreadTest());
+	rest.ThreadTest.setWorkSpace(matchProgress);
 	t.start();
 	
 	//Advance

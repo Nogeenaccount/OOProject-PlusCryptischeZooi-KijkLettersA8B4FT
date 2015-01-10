@@ -15,15 +15,15 @@ import javax.swing.JPanel;
 public class ImagePanel extends JPanel {
 	private Image image;
 	
-<span class="fc" id="L18">	public ImagePanel(Image image, GridBagConstraints c, GridBagLayout layout) {</span>
-<span class="fc" id="L19">		this.image = image;</span>
-<span class="fc" id="L20">		Dimension size = new Dimension(image.getWidth(null), image.getHeight(null));</span>
-<span class="fc" id="L21">		setPreferredSize(size);</span>
-<span class="fc" id="L22">		setMinimumSize(size);</span>
-<span class="fc" id="L23">		setMaximumSize(size);</span>
-<span class="fc" id="L24">		setSize(size);</span>
-<span class="fc" id="L25">		layout.setConstraints(this, c);</span>
-<span class="fc" id="L26">	}</span>
+<span class="nc" id="L18">	public ImagePanel(Image image, GridBagConstraints c, GridBagLayout layout) {</span>
+<span class="nc" id="L19">		this.image = image;</span>
+<span class="nc" id="L20">		Dimension size = new Dimension(image.getWidth(null), image.getHeight(null));</span>
+<span class="nc" id="L21">		setPreferredSize(size);</span>
+<span class="nc" id="L22">		setMinimumSize(size);</span>
+<span class="nc" id="L23">		setMaximumSize(size);</span>
+<span class="nc" id="L24">		setSize(size);</span>
+<span class="nc" id="L25">		layout.setConstraints(this, c);</span>
+<span class="nc" id="L26">	}</span>
 	
 	//Very important to get the image on screen
 	public void paintComponent(Graphics g) {

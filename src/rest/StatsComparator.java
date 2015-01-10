@@ -4,7 +4,7 @@ package rest;
 import java.util.Comparator;
 
 
-public class statsComparator implements Comparator<Player> {
+public class StatsComparator implements Comparator<Player> {
 
 	@Override
 	public int compare(Player p1, Player p2) {

@@ -2,7 +2,7 @@ package rest;
 
 import javax.swing.JTextArea;
 
-public class threadTest implements Runnable{
+public class ThreadTest implements Runnable{
 	private static JTextArea workSpace;
 	
 	@Override
@@ -22,6 +22,6 @@ public class threadTest implements Runnable{
 	}
 
 	public static void setWorkSpace(JTextArea workSpace) {
-		threadTest.workSpace = workSpace;
+		ThreadTest.workSpace = workSpace;
 	}
 }

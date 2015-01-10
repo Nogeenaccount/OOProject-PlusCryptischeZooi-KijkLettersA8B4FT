@@ -4,7 +4,7 @@ package rest;
 import java.util.Comparator;
 
 
-public class priceComparator implements Comparator<Player> {
+public class PriceComparator implements Comparator<Player> {
 	
 	public int compare(Player p1, Player p2) {
 		

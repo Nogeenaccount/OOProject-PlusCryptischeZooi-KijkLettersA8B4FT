@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="MacBook-Pro.local" name="rest.PlayerTest" skipped="0" tests="1" time="0.074" timestamp="2015-01-10T21:38:02">
+<testsuite errors="0" failures="3" hostname="MacBook-Pro.local" name="rest.MatchLogicTest" skipped="0" tests="3" time="0.124" timestamp="2015-01-10T21:38:01">
   <properties>
     <property name="ant.file.type.OOProject" value="file" />
     <property name="libs.jsp-compiler.javadoc" value="" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rest.PlayerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/test/results/TEST-rest.PlayerTest.xml crashfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junitvmwatcher2153813370856868106.properties propsfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junit6725355489875836499.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rest.MatchLogicTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/test/results/TEST-rest.MatchLogicTest.xml crashfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junitvmwatcher5439386309165369230.properties propsfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junit9157690354285518884.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -229,7 +229,6 @@
     <property name="org.openide.major.version" value="IDE/1" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
     <property name="netbeans.user" value="/Users/user/Library/Application Support/NetBeans/8.0.1" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="/var/folders/g9/3kpcb_wn40z9p5tmq81l11m80000gn/T/" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -296,10 +295,10 @@
     <property name="work.dir" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project" />
     <property name="libs.jaxb.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-impl.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-xjc.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb1-impl.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jaxb-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
-    <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="libs.j2me_common_ant.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/mobility/modules/org-netbeans-modules-j2me-common-ant.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/org-netbeans-modules-classfile.jar" />
-    <property name="libs.swing-layout.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/platform/modules/ext/swing-layout-1.0.4.jar" />
+    <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="libs.spring-webmvc3.0.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/spring-3.0/spring-webmvc-3.2.7.RELEASE.jar" />
+    <property name="libs.swing-layout.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/platform/modules/ext/swing-layout-1.0.4.jar" />
     <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
     <property name="libs.restlib.src" value="" />
     <property name="javac.source" value="1.8" />
@@ -316,8 +315,8 @@
     <property name="built-jar.properties" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
-    <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jpa2-persistence.src" value="" />
+    <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.DataBindingME-SVG.maven-pom" value="" />
@@ -327,18 +326,18 @@
     <property name="libs.javaee-web-api-7.0.src" value="" />
     <property name="libs.primefaces.src" value="" />
     <property name="dist.dir" value="dist" />
-    <property name="ant.file.OOProject" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project/build.xml" />
     <property name="libs.groovy-all.javadoc" value="" />
+    <property name="ant.file.OOProject" value="/Users/user/Desktop/werktuigbouwkunde/OOP-project/build.xml" />
     <property name="testng.debug.mode" value="" />
-    <property name="javac.fork" value="false" />
     <property name="libs.groovy-all.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/groovy/modules/ext/groovy-all.jar" />
+    <property name="javac.fork" value="false" />
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
     <property name="default.javac.source" value="1.8" />
     <property name="debug-transport-by-os" value="dt_socket" />
     <property name="sun.jnu.encoding" value="UTF-8" />
     <property name="libs.MySQLDriver.src" value="" />
-    <property name="build.test.results.dir" value="build/test/results" />
     <property name="java.runtime.version" value="1.8.0_25-b17" />
+    <property name="build.test.results.dir" value="build/test/results" />
     <property name="jna.platform.library.path" value="/usr/lib:/usr/lib" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/platform/modules/ext/junit-4.10.jar" />
@@ -355,8 +354,8 @@
     <property name="endorsed.classpath" value="" />
     <property name="libs.absolutelayout.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.metro.classpath" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-rt.jar:/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/mobility/modules/docs/netbeans_databindingme-api.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
@@ -407,7 +406,21 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="rest.PlayerTest" name="constructorTest" time="0.002" />
+  <testcase classname="rest.MatchLogicTest" name="testDefenceSum" time="0.016">
+    <failure message="expected:&lt;215.0&gt; but was:&lt;NaN&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;215.0&gt; but was:&lt;NaN&gt;
+	at rest.MatchLogicTest.testDefenceSum(MatchLogicTest.java:52)
+</failure>
+  </testcase>
+  <testcase classname="rest.MatchLogicTest" name="testOffenceSum" time="0.002">
+    <failure message="expected:&lt;130.9090909090909&gt; but was:&lt;NaN&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;130.9090909090909&gt; but was:&lt;NaN&gt;
+	at rest.MatchLogicTest.testOffenceSum(MatchLogicTest.java:47)
+</failure>
+  </testcase>
+  <testcase classname="rest.MatchLogicTest" name="testEnduranceSum" time="0.002">
+    <failure message="expected:&lt;210.0&gt; but was:&lt;NaN&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;210.0&gt; but was:&lt;NaN&gt;
+	at rest.MatchLogicTest.testEnduranceSum(MatchLogicTest.java:57)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

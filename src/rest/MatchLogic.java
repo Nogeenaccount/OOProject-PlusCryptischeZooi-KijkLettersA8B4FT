@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 
 
-public class matchLogic extends Thread{
+public class MatchLogic extends Thread{
 	
 	private int tCurrent;
 	private final int tMax;
@@ -34,7 +34,7 @@ public class matchLogic extends Thread{
 	 * @param txt html text
 	 * @param bar loading bar
 	 */
-	public matchLogic(int t, Team t1, Team t2, JLabel txt, JLabel updateTxt, JProgressBar bar, JButton bt){
+	public MatchLogic(int t, Team t1, Team t2, JLabel txt, JLabel updateTxt, JProgressBar bar, JButton bt){
 		tCurrent = 0;
 		tMax = t;
 		team1 = t1;
