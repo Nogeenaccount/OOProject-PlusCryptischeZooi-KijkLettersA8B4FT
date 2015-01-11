@@ -97,6 +97,21 @@ public class Team {
 
 		}
 	}
+        
+        public boolean equals(Object other){
+            if(other instanceof Team){
+                Team that = (Team)other;
+                if(teamName.equals(that.getTeamName())){
+                    for(int n=0;n<players.size();n++){
+                        if(!players.get(n).equals(that.getPlayers().get(n))){
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
 
 	/**
 	 * method to buy a player X constraint: your budget must be high enough to
