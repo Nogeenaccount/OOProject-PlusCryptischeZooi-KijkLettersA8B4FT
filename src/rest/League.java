@@ -125,9 +125,6 @@ public class League {
 	return new League("", 0, "", "");
     }
 
-    public static Round nextRound(String fileName, int ronde){
-        HEH
-    }
     /**
      * toString: turns League into a printable String
      *

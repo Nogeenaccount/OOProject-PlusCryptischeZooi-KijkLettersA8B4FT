@@ -19,7 +19,6 @@ import javax.swing.event.ListSelectionListener;
 
 @SuppressWarnings("serial")
 //WORKING WITH FILLER
-public class MenuTransfers extends State{
 
 	public MenuTransfers() {
     }

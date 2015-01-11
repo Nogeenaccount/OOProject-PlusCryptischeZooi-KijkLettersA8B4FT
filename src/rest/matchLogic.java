@@ -1,8 +1,6 @@
 package rest;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
+
 
 
 public class matchLogic extends Thread{
@@ -13,10 +11,7 @@ public class matchLogic extends Thread{
 	private int score2;
 	private Team team1;
 	private Team team2;	
-	private JLabel text;
-	private JLabel updateText;
-	private JProgressBar pBar;
-	private JButton button;
+	
 	
 	private double t1Offence;
 	private double t1Defence;
@@ -34,7 +29,7 @@ public class matchLogic extends Thread{
 	 * @param txt html text
 	 * @param bar loading bar
 	 */
-	public matchLogic(int t, Team t1, Team t2, JLabel txt, JLabel updateTxt, JProgressBar bar, JButton bt){
+	public matchLogic(int t, Team t1, Team t2){
 		tCurrent = 0;
 		tMax = t;
 		team1 = t1;
@@ -42,11 +37,7 @@ public class matchLogic extends Thread{
 		score1 = 0;
 		score2 = 0;
 		
-		text = txt;
-		updateText = updateTxt;
-		pBar = bar;
 		
-		button = bt;
 		
 /*		t1Offence =  offenceSum(t1);
 		t1Defence = defenceSum(t1);
@@ -122,16 +113,16 @@ public class matchLogic extends Thread{
 	 * @param t
 	 * @return
 	 */
-	public int scored(double O1, double D2, double E1, double E2, double t) {
+	public boolean scored(double O1, double D2, double E1, double E2, double t) {
 		double P;
 		double a = 5;
 		double b = 0.00015;
 		P = (O1 - D2/2)*Math.pow((E1/E2),(t/a))*b;
 		
 		if (Math.random() < P)
-			return 1;
+			return true;
 		else
-			return 0;
+			return false;
 	}
 	
 	/**
@@ -142,30 +133,17 @@ public class matchLogic extends Thread{
 		String html1 = "";
 		String html2 = "";
 		while (tCurrent<=90){
-			if (scored(t1Offence, t2Defence, t1Endurance, t2Endurance, tCurrent) == 1) {
+			if (scored(t1Offence, t2Defence, t1Endurance, t2Endurance, tCurrent)) {
 				score1++;
 			
 			
 			};
-			if (scored(t2Offence, t1Defence, t2Endurance, t1Endurance, tCurrent) == 1) {
+			if (scored(t2Offence, t1Defence, t2Endurance, t1Endurance, tCurrent)) {
 				score2++;
 				
 			};
 			
-			pBar.setValue(tCurrent);		
-			html1 = team1.getTeamName() + " " + score1 +"-"+ score2 + " " + team2.getTeamName() + "<br>" + tCurrent + "'<br>";
-			text.setText("<html>"+html1+"</html>");
 			
-			if (tCurrent%10 == 0)
-				html2 += "update"+(tCurrent/10+1)+"<br>";
-			updateText.setText("<html><body><p>"+html2+"</p></body></html>");			
-			
-			tCurrent += 90/tMax;
-			
-			if (tCurrent == tMax) {
-				button.setEnabled(true);
-				button.setVisible(true);
-			}
 			
 			try {
 				java.lang.Thread.sleep(150);
@@ -174,5 +152,77 @@ public class matchLogic extends Thread{
 			}
 		}
 	}
+        public Update tickHome(){
+            int typ =0;
+            Player spelert = null;
+            int min=tCurrent;
+            
+             double p1=0.01;
+             double p2=0.005;
+             double p3=0.02;
+            
+            
+            if(scored(offenceSum(team1), defenceSum(team2), enduranceSum(team1), enduranceSum(team2),tCurrent)){
+                int a = (int)(Math.round(Math.random()*3-0.5));
+                spelert = team1.getLineUp().getAanvallers().get(a);
+                return new Update(4, spelert, tCurrent);
+            }
+            
+            else if(Math.random()>0.9){
+                
+                spelert=team1.getLineUp().getRandomPlayer();
+                double temp = Math.random();
+                
+                if(temp<p1){
+                    return new Update(1, spelert, tCurrent);
+                }
+                if(temp<p2){
+                    return new Update(2, spelert, tCurrent);
+                }
+                if(temp<p3){
+                    return new Update(3, spelert, tCurrent);
+                }
+            }
+                        
+            return new Update(typ, spelert, min);
+        }
+        
+        public Update tickAway(){
+            int typ =0;
+            Player spelert = null;
+            int min=tCurrent;
+            
+             double p1=0.01;
+             double p2=0.005;
+             double p3=0.02;
+            
+            
+            if(scored(offenceSum(team2), defenceSum(team1), enduranceSum(team2), enduranceSum(team1),tCurrent)){
+                int a = (int)(Math.round(Math.random()*3-0.5));
+                spelert = team2.getLineUp().getAanvallers().get(a);
+                return new Update(4, spelert, tCurrent);
+            }
+            
+            else if(Math.random()>0.9){
+                
+                spelert=team2.getLineUp().getRandomPlayer();
+                double temp = Math.random();
+                
+                if(temp<p1){
+                    return new Update(1, spelert, tCurrent);
+                }
+                if(temp<p2){
+                    return new Update(2, spelert, tCurrent);
+                }
+                if(temp<p3){
+                    return new Update(3, spelert, tCurrent);
+                }
+            }
+                        
+            return new Update(typ, spelert, min);
+        }
+   
+        
+        
 	
 }

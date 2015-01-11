@@ -19,6 +19,8 @@ public class Match {
     public void Match(Team Home, Team Away){
         HomeTeam = Home;
         AwayTeam = Away;
+        HomeScore=0;
+        AwayScore=0;
     }
     
     public void setHomeTeam(Team a){

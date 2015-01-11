@@ -56,6 +56,26 @@ public class LineUp {
 			keeper.add(p);
 		}
 	}
+        
+        public Player getRandomPlayer(){
+            double positie = Math.random();
+            double id = Math.random();
+            
+            if(positie<0.33){
+                return verdedigers.get((int)Math.floor(id*3.99));
+            }
+            
+            if(positie<0.66){
+                return middenvelders.get((int)Math.floor(id*2.99));
+            }
+            
+            if(positie<0.99){
+                return aanvallers.get((int)Math.floor(id*2.99));
+            }
+            return keeper.get(0);
+            
+            
+        }
 
 	/*
 	 * GETTERS AND SETTERS
