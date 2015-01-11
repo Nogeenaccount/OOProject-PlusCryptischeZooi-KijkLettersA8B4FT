@@ -19,35 +19,42 @@ import static org.junit.Assert.*;
 public class MatchResultTest {
 
     Team team;
+    LineUp lineup;
     
     @Before
     public void before(){
 	team = new Team("Chelsea", "Arena", 10000);
-	team.add(new Player("p1", 1, 500, 10, 20, 30, "gk", 0, 0));
-	team.add(new Player("p2", 2, 500, 20, 30, 40, "gk", 0, 0));
-	team.add(new Player("p3", 3, 500, 30, 40, 50, "gk", 0, 0));
-	team.add(new Player("p4", 4, 500, 10, 20, 30, "gk", 0, 0));
-	team.add(new Player("p5", 5, 500, 20, 30, 40, "gk", 0, 0));
-	team.add(new Player("p6", 6, 500, 30, 40, 50, "gk", 0, 0));
-	team.add(new Player("p7", 7, 500, 10, 20, 30, "gk", 0, 0));
-	team.add(new Player("p8", 8, 500, 20, 30, 40, "gk", 0, 0));
-	team.add(new Player("p9", 9, 500, 30, 40, 50, "gk", 0, 0));
-	team.add(new Player("p10", 10, 500, 10, 20, 30, "gk", 0, 0));
-	team.add(new Player("p11", 11, 500, 20, 30, 40, "gk", 0, 0));
+	Player p1 = new Player("p1", 1, 500, 10, 20, 30, "gk", 0, 0);
+	Player p2 = new Player("p2", 2, 500, 20, 30, 40, "gk", 0, 0);
+	Player p3 = new Player("p3", 3, 500, 30, 40, 50, "gk", 0, 0);
+	Player p4 = new Player("p3", 3, 500, 40, 50, 60, "gk", 0, 0);
+	lineup = new LineUp();
+	lineup.addAanvaller(p1);
+	lineup.addAanvaller(p2);
+	lineup.addAanvaller(p3);
+	lineup.addMiddenvelder(p2);
+	lineup.addMiddenvelder(p3);
+	lineup.addMiddenvelder(p4);
+	lineup.addVerdediger(p1);
+	lineup.addVerdediger(p2);
+	lineup.addVerdediger(p3);
+	lineup.addVerdediger(p4);
+	lineup.setKeeper(p1);
+	team.setLineUp(lineup);
     }
     
     @Test
     public void testOffenceSum(){
-	assertEquals(320.0/11*4.5,MatchResult.offenceSum(team),0.1);
+	assertEquals(150,MatchResult.offenceSum(team),0.1);
     }
     
     @Test
     public void testDefenceSum(){
-	assertEquals(430.0/11*5.5,MatchResult.defenceSum(team),0.1);
+	assertEquals(285,MatchResult.defenceSum(team),0.1);
     }
     
     @Test
     public void testEnduranceSum(){
-	assertEquals(210.0/11*11,MatchResult.enduranceSum(team),0.1);
+	assertEquals(260,MatchResult.enduranceSum(team),0.1);
     }
 }

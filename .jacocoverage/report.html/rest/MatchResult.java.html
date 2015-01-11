@@ -7,10 +7,14 @@
 	 */
 	public static double offenceSum(Team t){
 <span class="fc" id="L9">		double S = 0;</span>
-<span class="fc bfc" id="L10" title="All 2 branches covered.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
-<span class="fc" id="L11">			S += t.getPlayers().get(i).getOffence();</span>
-		}		
-<span class="fc" id="L13">		return (S/t.getPlayers().size())*4.5;</span>
+<span class="fc bfc" id="L10" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getAanvallers().size(); i++){</span>
+<span class="fc" id="L11">			S += t.getLineUp().getAanvallers().get(i).getOffence();</span>
+		}
+<span class="fc bfc" id="L13" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getMiddenvelders().size(); i++){</span>
+<span class="fc" id="L14">			S += ( t.getLineUp().getMiddenvelders().get(i).getOffence() )/2;</span>
+		}
+		
+<span class="fc" id="L17">		return S;</span>
 	}
 	
 	/**
@@ -19,11 +23,16 @@
 	 * @return S
 	 */
 	public static double defenceSum(Team t){
-<span class="fc" id="L22">		double S = 0;</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
-<span class="fc" id="L24">			S += t.getPlayers().get(i).getDefence();</span>
-		}		
-<span class="fc" id="L26">		return (S/t.getPlayers().size())*5.5;</span>
+<span class="fc" id="L26">		double S = 0;</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getVerdedigers().size(); i++){</span>
+<span class="fc" id="L28">			S += t.getLineUp().getVerdedigers().get(i).getDefence();</span>
+		}
+<span class="fc bfc" id="L30" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getMiddenvelders().size(); i++){</span>
+<span class="fc" id="L31">			S += ( t.getLineUp().getMiddenvelders().get(i).getDefence() )/2;</span>
+		}
+<span class="fc" id="L33">		S += t.getLineUp().getKeeper().getDefence(); </span>
+		
+<span class="fc" id="L35">		return S;</span>
 	}
 
 	/**
@@ -32,11 +41,19 @@
 	 * @return S
 	 */
 	public static double enduranceSum(Team t){
-<span class="fc" id="L35">		double S = 0;</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">		for (int i=0; i&lt;t.getPlayers().size(); i++){</span>
-<span class="fc" id="L37">			S += t.getPlayers().get(i).getEndurance();</span>
-		}		
-<span class="fc" id="L39">		return (S/t.getPlayers().size())*11;</span>
+<span class="fc" id="L44">		double S = 0;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getAanvallers().size(); i++){</span>
+<span class="fc" id="L46">			S += t.getLineUp().getAanvallers().get(i).getEndurance();</span>
+		}
+<span class="fc bfc" id="L48" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getVerdedigers().size(); i++){</span>
+<span class="fc" id="L49">			S += t.getLineUp().getVerdedigers().get(i).getEndurance();</span>
+		}
+<span class="fc bfc" id="L51" title="All 2 branches covered.">		for (int i=0; i&lt;t.getLineUp().getMiddenvelders().size(); i++){</span>
+<span class="fc" id="L52">			S += t.getLineUp().getMiddenvelders().get(i).getEndurance();</span>
+		}
+<span class="fc" id="L54">		S += t.getLineUp().getKeeper().getEndurance(); </span>
+		
+<span class="fc" id="L56">		return S;</span>
 	}
 
 	/**
@@ -50,28 +67,28 @@
 	 */
 	public static int scored(double O1, double D2, double E1, double E2, double t) {
 		double P;
-<span class="nc" id="L53">		double a = 20;</span>
-<span class="nc" id="L54">		double b = 0.0002;</span>
-<span class="nc" id="L55">		P = (O1 - D2/2)*Math.pow((E1/E2),(t/a))*b;</span>
+<span class="nc" id="L70">		double a = 20;</span>
+<span class="nc" id="L71">		double b = 0.0002;</span>
+<span class="nc" id="L72">		P = (O1 - D2/2)*Math.pow((E1/E2),(t/a))*b;</span>
 		
-<span class="nc bnc" id="L57" title="All 2 branches missed.">		if (Math.random() &lt; P)</span>
-<span class="nc" id="L58">			return 1;</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">		if (Math.random() &lt; P)</span>
+<span class="nc" id="L75">			return 1;</span>
 		else
-<span class="nc" id="L60">			return 0;</span>
+<span class="nc" id="L77">			return 0;</span>
 	}
 
 	public static String getResult(Team t1, Team t2, int time){
-<span class="nc" id="L64">		int t1Result = 0;</span>
-<span class="nc" id="L65">		int t2Result = 0;</span>
+<span class="nc" id="L81">		int t1Result = 0;</span>
+<span class="nc" id="L82">		int t2Result = 0;</span>
 		
-<span class="nc bnc" id="L67" title="All 2 branches missed.">		for (int i = 0; i&lt;time; i++){</span>
-<span class="nc" id="L68">			t1Result += scored(offenceSum(t1),defenceSum(t2),enduranceSum(t1),enduranceSum(t2),time);</span>
-<span class="nc" id="L69">			t2Result += scored(offenceSum(t2),defenceSum(t1),enduranceSum(t2),enduranceSum(t1),time);</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		for (int i = 0; i&lt;time; i++){</span>
+<span class="nc" id="L85">			t1Result += scored(offenceSum(t1),defenceSum(t2),enduranceSum(t1),enduranceSum(t2),time);</span>
+<span class="nc" id="L86">			t2Result += scored(offenceSum(t2),defenceSum(t1),enduranceSum(t2),enduranceSum(t1),time);</span>
 		}
 		
-<span class="nc" id="L72">		String str = t1Result + &quot; - &quot; + t2Result;</span>
+<span class="nc" id="L89">		String str = t1Result + &quot; - &quot; + t2Result;</span>
 		
-<span class="nc" id="L74">		return str;</span>
+<span class="nc" id="L91">		return str;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

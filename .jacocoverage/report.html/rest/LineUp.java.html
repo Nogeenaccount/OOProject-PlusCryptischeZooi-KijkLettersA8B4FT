@@ -8,89 +8,78 @@ public class LineUp {
 	private ArrayList&lt;Player&gt; aanvallers;
 	private ArrayList&lt;Player&gt; middenvelders;
 	private ArrayList&lt;Player&gt; verdedigers;
-	private ArrayList&lt;Player&gt; keeper;
+	private Player keeper;
 	
 <span class="fc" id="L13">	public LineUp() {</span>
 <span class="fc" id="L14">		aanvallers = new ArrayList&lt;Player&gt;();</span>
 <span class="fc" id="L15">		middenvelders = new ArrayList&lt;Player&gt;();</span>
 <span class="fc" id="L16">		verdedigers = new ArrayList&lt;Player&gt;();</span>
-<span class="fc" id="L17">		keeper = new ArrayList&lt;Player&gt;();</span>
-<span class="fc" id="L18">	}</span>
+<span class="fc" id="L17">	}</span>
 
 	/**
 	 * addAanvaller: add an aanvaller to the lineup
 	 * @param p Player
 	 */
 	public void addAanvaller(Player p){
-<span class="nc bnc" id="L25" title="All 4 branches missed.">		if ( (!aanvallers.contains(p)) &amp;&amp; (aanvallers.size() &lt; 3) ){</span>
-<span class="nc" id="L26">			aanvallers.add(p);</span>
+<span class="fc bfc" id="L24" title="All 4 branches covered.">		if ( (!aanvallers.contains(p)) &amp;&amp; (aanvallers.size() &lt; 3) ){</span>
+<span class="fc" id="L25">			aanvallers.add(p);</span>
 		}
-<span class="nc" id="L28">	}</span>
+<span class="fc" id="L27">	}</span>
 
 	/**
 	 * addMiddenvelder: add an middenvelder to the lineup
 	 * @param p Player
 	 */
 	public void addMiddenvelder(Player p){
-<span class="nc bnc" id="L35" title="All 4 branches missed.">		if ((!middenvelders.contains(p)) &amp;&amp; (middenvelders.size() &lt; 3)){</span>
-<span class="nc" id="L36">			middenvelders.add(p);</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">		if ((!middenvelders.contains(p)) &amp;&amp; (middenvelders.size() &lt; 3)){</span>
+<span class="fc" id="L35">			middenvelders.add(p);</span>
 		}
-<span class="nc" id="L38">	}</span>
+<span class="fc" id="L37">	}</span>
 
 	/**
 	 * addVerdediger: add an verdediger to the lineup
 	 * @param p Player
 	 */
 	public void addVerdediger(Player p){
-<span class="nc bnc" id="L45" title="All 4 branches missed.">		if ((!verdedigers.contains(p)) &amp;&amp; (verdedigers.size() &lt; 4)){</span>
-<span class="nc" id="L46">			verdedigers.add(p);</span>
+<span class="fc bfc" id="L44" title="All 4 branches covered.">		if ((!verdedigers.contains(p)) &amp;&amp; (verdedigers.size() &lt; 4)){</span>
+<span class="fc" id="L45">			verdedigers.add(p);</span>
 		}
-<span class="nc" id="L48">	}</span>
-
-	/**
-	 * addKeeper: add an keeper to the lineup
-	 * @param p Player
-	 */
-	public void addKeeper(Player p){
-<span class="nc bnc" id="L55" title="All 4 branches missed.">		if ((!keeper.contains(p)) &amp;&amp; (keeper.size() &lt; 1)){</span>
-<span class="nc" id="L56">			keeper.add(p);</span>
-		}
-<span class="nc" id="L58">	}</span>
+<span class="fc" id="L47">	}</span>
 
 	/*
 	 * GETTERS AND SETTERS
 	 */
 	public ArrayList&lt;Player&gt; getAanvallers() {
-<span class="nc" id="L64">		return aanvallers;</span>
+<span class="fc" id="L53">		return aanvallers;</span>
 	}
 
 	public void setAanvallers(ArrayList&lt;Player&gt; aanvallers) {
-<span class="nc" id="L68">		this.aanvallers = aanvallers;</span>
-<span class="nc" id="L69">	}</span>
+<span class="fc" id="L57">		this.aanvallers = aanvallers;</span>
+<span class="fc" id="L58">	}</span>
 
 	public ArrayList&lt;Player&gt; getMiddenvelders() {
-<span class="nc" id="L72">		return middenvelders;</span>
+<span class="fc" id="L61">		return middenvelders;</span>
 	}
 
 	public void setMiddenvelders(ArrayList&lt;Player&gt; middenvelders) {
-<span class="nc" id="L76">		this.middenvelders = middenvelders;</span>
-<span class="nc" id="L77">	}</span>
+<span class="fc" id="L65">		this.middenvelders = middenvelders;</span>
+<span class="fc" id="L66">	}</span>
 
 	public ArrayList&lt;Player&gt; getVerdedigers() {
-<span class="nc" id="L80">		return verdedigers;</span>
+<span class="fc" id="L69">		return verdedigers;</span>
 	}
 
 	public void setVerdedigers(ArrayList&lt;Player&gt; verdedigers) {
-<span class="nc" id="L84">		this.verdedigers = verdedigers;</span>
-<span class="nc" id="L85">	}</span>
+<span class="fc" id="L73">		this.verdedigers = verdedigers;</span>
+<span class="fc" id="L74">	}</span>
 
-	public ArrayList&lt;Player&gt; getKeeper() {
-<span class="nc" id="L88">		return keeper;</span>
+	public Player getKeeper() {
+<span class="fc" id="L77">		return keeper;</span>
 	}
 
-	public void setKeeper(ArrayList&lt;Player&gt; keeper) {
-<span class="nc" id="L92">		this.keeper = keeper;</span>
-<span class="nc" id="L93">	}</span>
+	public void setKeeper(Player keeper) {
+<span class="fc" id="L81">		this.keeper = keeper;</span>
+<span class="fc" id="L82">	}</span>
 	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

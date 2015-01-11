@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="MacBook-Pro.local" name="rest.PlayerTest" skipped="0" tests="1" time="0.156" timestamp="2015-01-11T00:27:19">
+<testsuite errors="0" failures="0" hostname="MacBook-Pro.local" name="rest.LineUpTest" skipped="0" tests="2" time="0.106" timestamp="2015-01-11T00:27:16">
   <properties>
     <property name="ant.file.type.OOProject" value="file" />
     <property name="libs.jsp-compiler.javadoc" value="" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rest.PlayerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/test/results/TEST-rest.PlayerTest.xml crashfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junitvmwatcher1831325296492502768.properties propsfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junit3434266002208908152.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rest.LineUpTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/test/results/TEST-rest.LineUpTest.xml crashfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junitvmwatcher1701426317370412458.properties propsfile=/Users/user/Desktop/werktuigbouwkunde/OOP-project/build/junit5126858507848162037.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -402,7 +402,8 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/Applications/NetBeans/NetBeans 8.0.1.app/Contents/Resources/NetBeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="rest.PlayerTest" name="constructorTest" time="0.004" />
+  <testcase classname="rest.LineUpTest" name="addTest" time="0.003" />
+  <testcase classname="rest.LineUpTest" name="setTest" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

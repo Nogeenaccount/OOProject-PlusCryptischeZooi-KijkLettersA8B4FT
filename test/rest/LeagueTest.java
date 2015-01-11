@@ -5,8 +5,10 @@
  */
 package rest;
 
+import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,6 +22,7 @@ public class LeagueTest {
     @Before
     public void before(){
 	testleague = League.readResources("resourceV6.xml");
+//	assertTrue(League.readResources("resourceV6.xml").equals(testleague));
     }
     
     @Test
@@ -39,9 +42,43 @@ public class LeagueTest {
 	assertEquals(testleague.getTeams().get(14).getPlayers().get(5).getPrice(),10400000 );
     }
     
+    @Test
     public void writeTest() {
 	testleague.writeToXML("resourceV6.xml");
 	readTest();
     }
     
+    @Test
+    public void toStringTest() {
+	Team teama = testleague.getTeams().get(0);
+	Team teamb = testleague.getTeams().get(1);
+	testleague.setTeams(new ArrayList<Team>());
+	testleague.add(teama);
+	testleague.add(teamb);
+	
+	String str = "<League(" + testleague.getLeagueName() + ", " + testleague.getRounds() + ", " + teama + ", " + teamb + ")>";
+	assertEquals(str, testleague.toString());
+    }
+    
+    @Test
+    public void addTeamTest() {
+	assertEquals(testleague.getTeams().size(), 20);
+	testleague.add(testleague.getTeams().get(3));
+	assertEquals(testleague.getTeams().size(), 20);
+    }
+    
+    @Test
+    public void setterTest() {
+	testleague.setGameName("test");
+	assertEquals(testleague.getGameName(),"test");
+	
+	testleague.setChosenTeam("Arsenal");
+	assertEquals(testleague.getChosenTeam(),"Arsenal");
+	
+	testleague.setLeagueName("Eredivisie");
+	assertEquals(testleague.getLeagueName(),"Eredivisie");
+	
+	testleague.setRounds(34);
+	assertEquals(testleague.getRounds(),34);
+    }
 }

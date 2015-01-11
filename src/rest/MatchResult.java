@@ -7,10 +7,14 @@ public class MatchResult {
 	 */
 	public static double offenceSum(Team t){
 		double S = 0;
-		for (int i=0; i<t.getPlayers().size(); i++){
-			S += t.getPlayers().get(i).getOffence();
-		}		
-		return (S/t.getPlayers().size())*4.5;
+		for (int i=0; i<t.getLineUp().getAanvallers().size(); i++){
+			S += t.getLineUp().getAanvallers().get(i).getOffence();
+		}
+		for (int i=0; i<t.getLineUp().getMiddenvelders().size(); i++){
+			S += ( t.getLineUp().getMiddenvelders().get(i).getOffence() )/2;
+		}
+		
+		return S;
 	}
 	
 	/**
@@ -20,10 +24,15 @@ public class MatchResult {
 	 */
 	public static double defenceSum(Team t){
 		double S = 0;
-		for (int i=0; i<t.getPlayers().size(); i++){
-			S += t.getPlayers().get(i).getDefence();
-		}		
-		return (S/t.getPlayers().size())*5.5;
+		for (int i=0; i<t.getLineUp().getVerdedigers().size(); i++){
+			S += t.getLineUp().getVerdedigers().get(i).getDefence();
+		}
+		for (int i=0; i<t.getLineUp().getMiddenvelders().size(); i++){
+			S += ( t.getLineUp().getMiddenvelders().get(i).getDefence() )/2;
+		}
+		S += t.getLineUp().getKeeper().getDefence(); 
+		
+		return S;
 	}
 
 	/**
@@ -33,10 +42,18 @@ public class MatchResult {
 	 */
 	public static double enduranceSum(Team t){
 		double S = 0;
-		for (int i=0; i<t.getPlayers().size(); i++){
-			S += t.getPlayers().get(i).getEndurance();
-		}		
-		return (S/t.getPlayers().size())*11;
+		for (int i=0; i<t.getLineUp().getAanvallers().size(); i++){
+			S += t.getLineUp().getAanvallers().get(i).getEndurance();
+		}
+		for (int i=0; i<t.getLineUp().getVerdedigers().size(); i++){
+			S += t.getLineUp().getVerdedigers().get(i).getEndurance();
+		}
+		for (int i=0; i<t.getLineUp().getMiddenvelders().size(); i++){
+			S += t.getLineUp().getMiddenvelders().get(i).getEndurance();
+		}
+		S += t.getLineUp().getKeeper().getEndurance(); 
+		
+		return S;
 	}
 
 	/**

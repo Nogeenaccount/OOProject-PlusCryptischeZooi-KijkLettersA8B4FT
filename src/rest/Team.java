@@ -12,14 +12,12 @@ public class Team {
 	private int winStreak;
 	private int budget;
 
-	private int leagueScore;
 	private int played;
 	private int wins;
 	private int draws;
 	private int losses;
 	private int goalsMade;
 	private int goalsAgainst;
-	private int goalDifference;
 
 	/**
 	 * Team: constructor
@@ -36,14 +34,12 @@ public class Team {
 		players = new ArrayList<Player>();
 		lineUp = new LineUp();
 		winStreak = 0;
-		leagueScore = 0;
 		played = 0;
 		wins = 0;
 		draws = 0;
 		losses = 0;
 		goalsMade = 0;
 		goalsAgainst = 0;
-		goalDifference = 0;
 	}
 
 	/**
@@ -70,10 +66,8 @@ public class Team {
 				str += ", ";
 
 		}
-		str += stadiumName + ", " + winStreak + ", " + budget + ", "
-				+ leagueScore + ", " + played + ", " + wins + ", " + draws
-				+ ", " + losses + ", " + goalsMade + ", " + goalsAgainst + ", "
-				+ goalDifference;
+		str += stadiumName + ", " + winStreak + ", " + budget + ", " + ", " + played + ", " + wins + ", " + draws
+				+ ", " + losses + ", " + goalsMade + ", " + goalsAgainst + ", ";
 		str += ")>";
 		return str;
 	}
@@ -209,11 +203,7 @@ public class Team {
 	}
 
 	public int getLeagueScore() {
-		return leagueScore;
-	}
-
-	public void setLeagueScore(int leagueScore) {
-		this.leagueScore = leagueScore;
+		return wins*3+draws*1;
 	}
 
 	public int getPlayed() {
@@ -265,11 +255,7 @@ public class Team {
 	}
 
 	public int getGoalDifference() {
-		return goalDifference;
-	}
-
-	public void setGoalDifference(int goalDifference) {
-		this.goalDifference = goalDifference;
+		return goalsMade-goalsAgainst;
 	}
 
 	public LineUp getLineUp() {

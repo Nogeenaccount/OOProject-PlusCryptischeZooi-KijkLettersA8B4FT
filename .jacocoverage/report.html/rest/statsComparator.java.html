@@ -4,17 +4,17 @@
 import java.util.Comparator;
 
 
-<span class="nc" id="L7">public class StatsComparator implements Comparator&lt;Player&gt; {</span>
+<span class="fc" id="L7">public class StatsComparator implements Comparator&lt;Player&gt; {</span>
 
 	@Override
 	public int compare(Player p1, Player p2) {
 	
-<span class="nc bnc" id="L12" title="All 2 branches missed.">		if (p1.getAttributes() &gt;= p2.getAttributes())</span>
-<span class="nc" id="L13">			return -1;</span>
-<span class="nc bnc" id="L14" title="All 2 branches missed.">		else if (p1.getAttributes() &lt;= p2.getAttributes())</span>
-<span class="nc" id="L15">			return 1;</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">		if (p1.getAttributes() &gt; p2.getAttributes())</span>
+<span class="fc" id="L13">			return -1;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">		else if (p1.getAttributes() &lt; p2.getAttributes())</span>
+<span class="fc" id="L15">			return 1;</span>
 	
-<span class="nc" id="L17">		else return 0;</span>
+<span class="fc" id="L17">		else return 0;</span>
 		
 	}
 	

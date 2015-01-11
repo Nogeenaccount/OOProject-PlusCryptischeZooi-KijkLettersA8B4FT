@@ -58,62 +58,6 @@ public class MatchLogic extends Thread{
 	}
 	
 	/**
-	 * offenceSum: returns the sum of offence in lineUp
-	 * @param t
-	 * @return S
-	 */
-	public double offenceSum(Team t){
-		double S = 0;
-		for (int i=0; i<t.getLineUp().getAanvallers().size(); i++){
-			S += t.getLineUp().getAanvallers().get(i).getOffence();
-		}
-		for (int i=0; i<t.getLineUp().getMiddenvelders().size(); i++){
-			S += ( t.getLineUp().getMiddenvelders().get(i).getOffence() )/2;
-		}
-		
-		return S;
-	}
-	
-	/**
-	 * defenceSum: returns the sum of defence in lineUp
-	 * @param t
-	 * @return S
-	 */
-	public double defenceSum(Team t){
-		double S = 0;
-		for (int i=0; i<t.getLineUp().getVerdedigers().size(); i++){
-			S += t.getLineUp().getVerdedigers().get(i).getDefence();
-		}
-		for (int i=0; i<t.getLineUp().getMiddenvelders().size(); i++){
-			S += ( t.getLineUp().getMiddenvelders().get(i).getDefence() )/2;
-		}
-		S += t.getLineUp().getKeeper().get(0).getDefence(); 
-		
-		return S;
-	}
-
-	/**
-	 * enduranceSum: returns the sum of endurance in lineUp
-	 * @param t
-	 * @return S
-	 */
-	public double enduranceSum(Team t){
-		double S = 0;
-		for (int i=0; i<t.getLineUp().getAanvallers().size(); i++){
-			S += t.getLineUp().getAanvallers().get(i).getEndurance();
-		}
-		for (int i=0; i<t.getLineUp().getVerdedigers().size(); i++){
-			S += t.getLineUp().getVerdedigers().get(i).getEndurance();
-		}
-		for (int i=0; i<t.getLineUp().getMiddenvelders().size(); i++){
-			S += t.getLineUp().getMiddenvelders().get(i).getEndurance();
-		}
-		S += t.getLineUp().getKeeper().get(0).getEndurance(); 
-		
-		return S;
-	}
-
-	/**
 	 * scored: return 1 or 0 depending on chance of scoring of the team
 	 * @param O1
 	 * @param D2

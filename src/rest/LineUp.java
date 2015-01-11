@@ -8,13 +8,12 @@ public class LineUp {
 	private ArrayList<Player> aanvallers;
 	private ArrayList<Player> middenvelders;
 	private ArrayList<Player> verdedigers;
-	private ArrayList<Player> keeper;
+	private Player keeper;
 	
 	public LineUp() {
 		aanvallers = new ArrayList<Player>();
 		middenvelders = new ArrayList<Player>();
 		verdedigers = new ArrayList<Player>();
-		keeper = new ArrayList<Player>();
 	}
 
 	/**
@@ -47,16 +46,6 @@ public class LineUp {
 		}
 	}
 
-	/**
-	 * addKeeper: add an keeper to the lineup
-	 * @param p Player
-	 */
-	public void addKeeper(Player p){
-		if ((!keeper.contains(p)) && (keeper.size() < 1)){
-			keeper.add(p);
-		}
-	}
-
 	/*
 	 * GETTERS AND SETTERS
 	 */
@@ -84,11 +73,11 @@ public class LineUp {
 		this.verdedigers = verdedigers;
 	}
 
-	public ArrayList<Player> getKeeper() {
+	public Player getKeeper() {
 		return keeper;
 	}
 
-	public void setKeeper(ArrayList<Player> keeper) {
+	public void setKeeper(Player keeper) {
 		this.keeper = keeper;
 	}
 	
