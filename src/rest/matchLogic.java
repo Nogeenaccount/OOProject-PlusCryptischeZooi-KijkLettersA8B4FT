@@ -1,41 +1,23 @@
 package rest;
-
-
-
-
-public class matchLogic extends Thread{
+public class matchLogic{
 	
 	private int tCurrent;
-	private final int tMax;
-	private int score1;
-	private int score2;
 	private Team team1;
 	private Team team2;	
 	
 	
-	private double t1Offence;
-	private double t1Defence;
-	private double t1Endurance;
-
-	private double t2Offence;
-	private double t2Defence;
-	private double t2Endurance;
+	
 
 	/**
 	 * matchLogic: constructor
 	 * @param t amount of time
 	 * @param t1 team one
 	 * @param t2 team two
-	 * @param txt html text
-	 * @param bar loading bar
 	 */
-	public matchLogic(int t, Team t1, Team t2){
+	public matchLogic(Team t1, Team t2){
 		tCurrent = 0;
-		tMax = t;
 		team1 = t1;
 		team2 = t2;
-		score1 = 0;
-		score2 = 0;
 		
 		
 		
@@ -128,31 +110,7 @@ public class matchLogic extends Thread{
 	/**
 	 * run: new Thread
 	 */
-	public void run(){
-		
-		String html1 = "";
-		String html2 = "";
-		while (tCurrent<=90){
-			if (scored(t1Offence, t2Defence, t1Endurance, t2Endurance, tCurrent)) {
-				score1++;
-			
-			
-			};
-			if (scored(t2Offence, t1Defence, t2Endurance, t1Endurance, tCurrent)) {
-				score2++;
-				
-			};
-			
-			
-			
-			try {
-				java.lang.Thread.sleep(150);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-        public Update tickHome(){
+	public Update tickHome(){
             int typ =0;
             Player spelert = null;
             int min=tCurrent;
